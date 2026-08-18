@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bu30uut2w0kb0"]
+
+[ext_resource type="PackedScene" uid="uid://dbh4q5f8de0jj" path="res://page.blend" id="1_goafy"]
+[ext_resource type="Script" uid="uid://ca26n4fn3y3l6" path="res://page.gd" id="2_d7k5m"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="3_68sby"]
+[ext_resource type="Texture2D" uid="uid://cp813sgan1165" path="res://page.png" id="4_1f86d"]
+
+[sub_resource type="Gradient" id="Gradient_83lsi"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1eucm"]
+gradient = SubResource("Gradient_83lsi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5yvh"]
+render_priority = 0
+shader = ExtResource("3_68sby")
+shader_parameter/albedo_texture = ExtResource("4_1f86d")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_1eucm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.45, 2.777, 1.97)
+
+[node name="page" unique_id=1276333033 instance=ExtResource("1_goafy")]
+script = ExtResource("2_d7k5m")
+
+[node name="Plane" parent="." index="0" unique_id=2057476021]
+surface_material_override/0 = SubResource("ShaderMaterial_s5yvh")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1085836502]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1914919615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.038378835, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

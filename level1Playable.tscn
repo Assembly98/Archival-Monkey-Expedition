@@ -1,0 +1,473 @@
+[gd_scene format=3 uid="uid://h0pihr6k2xus"]
+
+[ext_resource type="Script" uid="uid://dy4yqbfeml4f3" path="res://level_1_playable.gd" id="1_axxc2"]
+[ext_resource type="Texture2D" uid="uid://bkk3xcvxn80nd" path="res://testBG.png" id="2_58fyk"]
+[ext_resource type="PackedScene" uid="uid://cqmen2fvnvyjr" path="res://level_1GD.tscn" id="3_rsq0g"]
+[ext_resource type="PackedScene" uid="uid://ufw6fks88epw" path="res://monkeyResources/Monkey.tscn" id="4_ycq0b"]
+[ext_resource type="Script" uid="uid://c6qre2mr5xwde" path="res://enemyStateMachineTemp.gd" id="6_axxc2"]
+[ext_resource type="PackedScene" uid="uid://brjdfns0yf2hv" path="res://enemy_tempGD.tscn" id="7_5h87a"]
+[ext_resource type="PackedScene" uid="uid://ds0hnhs0jt0xy" path="res://launchZone.tscn" id="8_rqo71"]
+[ext_resource type="PackedScene" uid="uid://b8uj7a6bmopx3" path="res://movingPlatformVertical.tscn" id="9_hs517"]
+[ext_resource type="Script" uid="uid://bdadukmamne5p" path="res://platformSpawner.gd" id="9_qbd15"]
+[ext_resource type="PackedScene" uid="uid://b5srvcbc4xvuh" path="res://keyCoin.tscn" id="9_rqo71"]
+[ext_resource type="PackedScene" uid="uid://cr6j1akjfkuf" path="res://movingPlatform.tscn" id="11_qbd15"]
+[ext_resource type="Texture2D" uid="uid://0w08hucwlsog" path="res://starSprites.png" id="12_2kh0m"]
+[ext_resource type="Script" uid="uid://wm5xbab7j0ke" path="res://levelEnd.gd" id="13_58fyk"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5h87a"]
+panorama = ExtResource("2_58fyk")
+
+[sub_resource type="Sky" id="Sky_qbd15"]
+sky_material = SubResource("PanoramaSkyMaterial_5h87a")
+
+[sub_resource type="Environment" id="Environment_2kh0m"]
+background_mode = 2
+sky = SubResource("Sky_qbd15")
+sky_rotation = Vector3(0, 3.1415927, 0)
+
+[sub_resource type="Curve3D" id="Curve3D_axxc2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.022979736, -0.55716705, -0.7787781, -3123.614, -2879.219, 0.011199951, 3123.614, 2879.219, -0.011199951, 2857.8386, 5039.8027, -0.7787781, 0, 0, 0, 0, 0, 0, 7679.5654, 7044.997, -0.7787781),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs517"]
+size = Vector3(45, 59, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qbd15"]
+size = Vector3(45, 59, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kh0m"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+stencil_flags = 2
+stencil_outline_thickness = 1.0
+
+[sub_resource type="Animation" id="Animation_58fyk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.51249695, 0, -228.21954)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e7mkf"]
+resource_name = "wallDown"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.50000405, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.51249695, 0, -228.21954), Vector3(0.51249695, 0, -228.21954), Vector3(0.512, -45, -228.22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t26tm"]
+_data = {
+&"RESET": SubResource("Animation_58fyk"),
+&"wallDown": SubResource("Animation_e7mkf")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wgxnn"]
+angle_min = 450.00003
+angle_max = 720.0
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 0)
+rotation_3d_max = Vector3(359, 359, 359)
+gravity = Vector3(0, 9.8, 0)
+turbulence_enabled = true
+turbulence_noise_speed = Vector3(25, 0, 25)
+turbulence_noise_speed_random = 1.0
+turbulence_influence_min = 0.0
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 30.000002
+
+[sub_resource type="Shader" id="Shader_11l65"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_toon, specular_toon, ambient_light_disabled;
+
+uniform float size = 0.4;
+uniform float intensity = 1.2;
+uniform float frame_time = 0.17;
+uniform vec2 ranRange;
+uniform sampler2D color_gradient;
+uniform vec3 color : source_color;
+
+float rand(vec2 co){
+	return fract(sin(dot(co.xy, vec2(12.9898, 78.234))) * 43758.5453);
+}
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+	float rounded_time =  round(TIME / frame_time) * frame_time;
+	
+	
+	float heightX = pow(abs(cos(VERTEX.y * size + rounded_time * 10.0)), 0.5) * intensity
+	- pow(abs(cos(VERTEX.z * size * 0.7 + rand(ranRange) * 5.0)), 0.5) * intensity * 1.29;
+	float heightY = pow(abs(cos(VERTEX.y * size + rounded_time * 10.0)), 0.5) * intensity
+	- pow(abs(cos(VERTEX.z * size * 0.7 + rand(ranRange) * 10.0)), 0.5) * intensity * 1.29;
+	float heightZ = pow(abs(cos(VERTEX.y * size + rounded_time)), 0.5) * intensity
+	- pow(abs(cos(VERTEX.z * size * 0.7 + rand(ranRange) * 15.0)), 0.5) * intensity * 1.29;
+	
+	VERTEX += vec3(heightX, heightY,heightZ);
+}
+
+
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+	ALBEDO = color;
+}
+
+void light() {
+	// Called for every pixel for every light affecting the material.
+	// Uncomment to replace the default light processing function with this one.4
+	float dotProduct = clamp(dot(NORMAL, LIGHT), -0.9, 0.9);
+	float sample = clamp((dotProduct + 1.0) * ATTENUATION / 2.1, 0.05, 0.95);
+	vec4 shaded = texture(color_gradient, vec2(sample, 0.0));
+	
+	DIFFUSE_LIGHT += clamp((shaded.rgb * LIGHT_COLOR), 0.0, 1.0);
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_qbd15"]
+offsets = PackedFloat32Array(0.5, 0.51)
+colors = PackedColorArray(0.3232125, 0.3232125, 0.3232125, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aov4f"]
+gradient = SubResource("Gradient_qbd15")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kh0m"]
+render_priority = 0
+shader = SubResource("Shader_11l65")
+shader_parameter/size = 2.06
+shader_parameter/intensity = 0.12
+shader_parameter/frame_time = 0.031
+shader_parameter/ranRange = Vector2(1, 15)
+shader_parameter/color_gradient = SubResource("GradientTexture1D_aov4f")
+shader_parameter/color = Color(1, 0.89411765, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2j2di"]
+material = SubResource("ShaderMaterial_2kh0m")
+
+[sub_resource type="Skin" id="Skin_p1u0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58fyk"]
+atlas = ExtResource("12_2kh0m")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7mkf"]
+atlas = ExtResource("12_2kh0m")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t26tm"]
+atlas = ExtResource("12_2kh0m")
+region = Rect2(512, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2k2l"]
+atlas = ExtResource("12_2kh0m")
+region = Rect2(768, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bfbv"]
+atlas = ExtResource("12_2kh0m")
+region = Rect2(1024, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58fyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7mkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t26tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2k2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bfbv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 1.142
+
+[node name="Node3D" type="Node3D" unique_id=310119545]
+script = ExtResource("1_axxc2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=389571793]
+environment = SubResource("Environment_2kh0m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=42853770]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+shadow_blur = 0.0
+
+[node name="level1" parent="." unique_id=804919701 instance=ExtResource("3_rsq0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013427734, -0.07910156, 0.01171875)
+
+[node name="Monkey" parent="." unique_id=937305560 instance=ExtResource("4_ycq0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 192.60951, 193.52388)
+
+[node name="launchZone" parent="." unique_id=2079596268 instance=ExtResource("8_rqo71")]
+transform = Transform3D(-3.2227415e-08, -2.9530984e-08, 1, -0.67559016, 0.7372773, 0, -0.7372773, -0.67559016, -4.371139e-08, 9.227081, 17.752861, -288.67096)
+
+[node name="Path3D" type="Path3D" parent="launchZone" unique_id=1701417358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14951324, 0.24234009, 0)
+curve = SubResource("Curve3D_axxc2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="launchZone/Path3D" unique_id=119876486]
+transform = Transform3D(-4.2200085e-05, 0.99252176, 0.122069955, 0, 0.122069985, -0.9925215, -1, -4.1884505e-05, -5.1513625e-06, 0.022979736, -0.55716705, -0.7787781)
+rotation_mode = 4
+
+[node name="Node3D" type="Node3D" parent="launchZone/Path3D/PathFollow3D" unique_id=247810497]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=406055849]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.51249695, 0, -228.21954)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1096402635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7246094, 18.242035, 0)
+shape = SubResource("BoxShape3D_hs517")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=1485681327]
+mesh = SubResource("BoxMesh_qbd15")
+surface_material_override/0 = SubResource("StandardMaterial3D_2kh0m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1255503904]
+libraries/ = SubResource("AnimationLibrary_t26tm")
+autoplay = &"RESET"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=67048776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -180)
+script = ExtResource("6_axxc2")
+
+[node name="coinContainer" type="Node" parent="." unique_id=2132040021]
+
+[node name="KeyCoin" parent="coinContainer" unique_id=2079233303 instance=ExtResource("9_rqo71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1562805, 20.955973, -107.89846)
+
+[node name="KeyCoin2" parent="coinContainer" unique_id=643224612 instance=ExtResource("9_rqo71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2297363, 18.036076, -161.6)
+
+[node name="KeyCoin3" parent="coinContainer" unique_id=343546220 instance=ExtResource("9_rqo71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.872408, 29.93501, -162.28642)
+
+[node name="KeyCoin4" parent="coinContainer" unique_id=1985577733 instance=ExtResource("9_rqo71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.153107, 41.612232, -147.51962)
+
+[node name="KeyCoin5" parent="coinContainer" unique_id=305947034 instance=ExtResource("9_rqo71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.380249, 41.707127, -191.99472)
+
+[node name="enemyTemp" parent="." unique_id=19272026 instance=ExtResource("7_5h87a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.597599, 12.545117, -192.95671)
+
+[node name="enemyTemp2" parent="." unique_id=359030038 instance=ExtResource("7_5h87a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.597599, 12.545117, -113.42351)
+
+[node name="enemyTemp3" parent="." unique_id=2050336056 instance=ExtResource("7_5h87a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84869, 12.545117, -142.97429)
+
+[node name="platformSpawner" type="Node3D" parent="." unique_id=883046159]
+transform = Transform3D(0.3586143, 0, -0.10963938, 0, 0.375, 0, 0.109639384, 0, 0.35861427, 6.5616503, 12.345582, -10736.127)
+script = ExtResource("9_qbd15")
+
+[node name="Timer" type="Timer" parent="platformSpawner" unique_id=1959996649]
+one_shot = true
+
+[node name="movingPlatform" parent="platformSpawner" unique_id=1043238903 node_paths=PackedStringArray("spawnTimer") instance=ExtResource("9_hs517")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+spawnTimer = NodePath("../Timer")
+
+[node name="platformSpawner2" type="Node3D" parent="." unique_id=1425790111]
+transform = Transform3D(0.3180181, 0, 0.1987197, 0, 0.37500018, 0, -0.19871977, 0, 0.318018, 6.636, 28.523926, -10728.869)
+script = ExtResource("9_qbd15")
+
+[node name="Timer" type="Timer" parent="platformSpawner2" unique_id=2136528462]
+one_shot = true
+
+[node name="movingPlatform" parent="platformSpawner2" unique_id=1446578150 node_paths=PackedStringArray("spawnTimer") instance=ExtResource("9_hs517")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+spawnTimer = NodePath("../Timer")
+delayTime = 4.0
+
+[node name="platformSpawner3" type="Node3D" parent="." unique_id=924671305]
+transform = Transform3D(0.1282576, 0, 0.35238466, 0, 0.37500018, 0, -0.35238487, 0, 0.12825753, 12.299574, 45.090347, -10723.576)
+script = ExtResource("9_qbd15")
+
+[node name="Timer" type="Timer" parent="platformSpawner3" unique_id=321365871]
+one_shot = true
+
+[node name="movingPlatform" parent="platformSpawner3" unique_id=1522513010 node_paths=PackedStringArray("spawnTimer") instance=ExtResource("9_hs517")]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 4.0227814, 0)
+spawnTimer = NodePath("../Timer")
+delayTime = 7.0
+
+[node name="platformSpawner4" type="Node3D" parent="." unique_id=939122789]
+transform = Transform3D(0.59, 0, 5.861123e-09, 0, 0.59, 0, -5.861123e-09, 0, 0.59, 33.205276, 60.505062, -10834.855)
+script = ExtResource("9_qbd15")
+
+[node name="Timer" type="Timer" parent="platformSpawner4" unique_id=103640747]
+one_shot = true
+
+[node name="movingPlatform" parent="platformSpawner4" unique_id=1865283864 node_paths=PackedStringArray("spawnTimer") instance=ExtResource("9_hs517")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+spawnTimer = NodePath("../Timer")
+
+[node name="movingPlatform" parent="." unique_id=199633631 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2431335, 109.10901, -10957.958)
+distanceTime = 2.55
+direction = Vector3(0, 0, -1)
+spd = 0.15
+
+[node name="movingPlatform2" parent="." unique_id=948376429 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3699, 109.10901, -11002.21)
+distanceTime = 2.55
+direction = Vector3(0, 0, 1)
+spd = 0.15
+
+[node name="movingPlatform3" parent="." unique_id=679270245 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.179634, 109.10901, -11024.419)
+distanceTime = 2.57
+direction = Vector3(1, 0, 0)
+spd = 0.315
+
+[node name="movingPlatform5" parent="." unique_id=769884713 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.27252, 109.10901, -11024.419)
+distanceTime = 3.4
+direction = Vector3(1, 0, 0)
+spd = 0.315
+
+[node name="movingPlatform4" parent="." unique_id=1222281061 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.2152, 109.10901, -11024.419)
+distanceTime = 2.57
+direction = Vector3(-1, 0, 0)
+spd = 0.315
+
+[node name="movingPlatform6" parent="." unique_id=910857317 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.09082, 109.10901, -11091.26)
+distanceTime = 3.4
+direction = Vector3(0, 0, 1)
+spd = 0.315
+
+[node name="movingPlatform7" parent="." unique_id=1287541078 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 309.6792, 109.10901, -11091.14)
+distanceTime = 3.4
+direction = Vector3(0, 1, 0)
+spd = 0.315
+
+[node name="movingPlatform8" parent="." unique_id=1014016900 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 332.1956, 173.91347, -11033.277)
+distanceTime = 3.4
+direction = Vector3(0, 0, -1)
+spd = 0.315
+
+[node name="movingPlatform9" parent="." unique_id=2054413406 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 351.82062, 173.91347, -11033.277)
+distanceTime = 3.4
+direction = Vector3(1, 0, 0)
+spd = 0.315
+
+[node name="movingPlatform10" parent="." unique_id=1301903455 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 437.51566, 109.21965, -11033.277)
+distanceTime = 3.4
+direction = Vector3(0, 1, 0)
+spd = 0.315
+
+[node name="movingPlatform13" parent="." unique_id=1400583209 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 536.54376, 109.21965, -11022.65)
+distanceTime = 4.5
+direction = Vector3(0, 1, 0)
+spd = 0.315
+
+[node name="movingPlatform11" parent="." unique_id=788025815 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 462.07544, 109.21965, -10999.656)
+delayTime = 0.0
+distanceTime = 7.0
+direction = Vector3(0, 0, -1)
+spd = 0.31
+
+[node name="movingPlatform12" parent="." unique_id=585826261 instance=ExtResource("11_qbd15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 483.7562, 109.21965, -11080.1455)
+delayTime = 0.0
+distanceTime = 7.0
+direction = Vector3(0, 0, 1)
+spd = 0.31
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1216159134]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 568.0024, 200.31903, -11025.525)
+speed_scale = 0.45
+process_material = SubResource("ParticleProcessMaterial_wgxnn")
+draw_pass_1 = SubResource("SphereMesh_2j2di")
+draw_skin = SubResource("Skin_p1u0y")
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=1316801041]
+transform = Transform3D(0.1712697, 0.5054376, -0.8456948, 0, 0.858378, 0.5130179, 0.9852242, -0.08786442, 0.14701414, 552.16345, 204.13147, -11023.745)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=140052813]
+transform = Transform3D(5.3499722, 0.017221479, 0, -0.017221479, 5.3499722, 0, 0, 0, 5.35, 566.92676, 201.23486, -11023.726)
+billboard = 2
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+speed_scale = 7.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1866109305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 566.92676, 201.23486, -11023.726)
+script = ExtResource("13_58fyk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1733206413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72924805, 0, -0.86328125)
+shape = SubResource("SphereShape3D_g4v7s")
+
+[connection signal="timeout" from="platformSpawner/Timer" to="platformSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="platformSpawner2/Timer" to="platformSpawner2" method="_on_timer_timeout"]
+[connection signal="timeout" from="platformSpawner3/Timer" to="platformSpawner3" method="_on_timer_timeout"]
+[connection signal="timeout" from="platformSpawner4/Timer" to="platformSpawner4" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

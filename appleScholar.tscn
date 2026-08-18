@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d1u0qj8r2gmaw"]
+
+[ext_resource type="Script" uid="uid://dmn8ps6c6da52" path="res://apple_scholar.gd" id="1_kljpe"]
+[ext_resource type="PackedScene" uid="uid://c2h6tvsq0dl5p" path="res://appleScholarGD.tscn" id="1_vp8d8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kljpe"]
+radius = 0.81933594
+height = 2.3051758
+
+[node name="appleScholar" type="CharacterBody3D" unique_id=489590142]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_kljpe")
+
+[node name="appleScholar" parent="." unique_id=1708473739 instance=ExtResource("1_vp8d8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=952783713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15258789, 0)
+shape = SubResource("CapsuleShape3D_kljpe")

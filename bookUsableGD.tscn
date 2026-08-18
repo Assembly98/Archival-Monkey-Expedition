@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b2vse2hlxo06j"]
+
+[ext_resource type="PackedScene" uid="uid://3f581yt6u6l2" path="res://bookUsable.blend" id="1_38cuq"]
+[ext_resource type="Script" uid="uid://cn4gq6aucrr87" path="res://bookCoverScript.gd" id="2_bcjwk"]
+[ext_resource type="Shader" uid="uid://dgfwnwvinnida" path="res://bookShader.gdshader" id="3_x22sl"]
+[ext_resource type="Material" uid="uid://c7gmxc40g6yu0" path="res://outline.tres" id="4_l8p3k"]
+
+[sub_resource type="Gradient" id="Gradient_l8p3k"]
+offsets = PackedFloat32Array(0.5, 0.51)
+colors = PackedColorArray(0.039215688, 0.039215688, 0.039215688, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bcjwk"]
+gradient = SubResource("Gradient_l8p3k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+render_priority = 0
+shader = ExtResource("3_x22sl")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_bcjwk")
+
+[node name="bookUsable" unique_id=1730270858 instance=ExtResource("1_38cuq")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
+script = ExtResource("2_bcjwk")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1886344232) index="0" unique_id=920233281]
+bones/0/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/1/rotation = Quaternion(0.7071069, 0, 0, 0.70710665)
+bones/2/rotation = Quaternion(1.4901161e-07, 0, 0, 1)
+
+[node name="Cube" parent="Armature/Skeleton3D" index="0" unique_id=58945821]
+surface_material_override/0 = SubResource("ShaderMaterial_g4v7s")
+surface_material_override/1 = ExtResource("4_l8p3k")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1133024652]
+autoplay = &"idle"
+speed_scale = 0.5

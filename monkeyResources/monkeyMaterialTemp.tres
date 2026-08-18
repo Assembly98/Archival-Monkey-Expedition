@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2klir5ee06qb"]
+
+[ext_resource type="Texture2D" uid="uid://4deif6rfkkli" path="res://monkeyResources/monkeyTextures(temp).png" id="1_v1i8c"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("1_v1i8c")
+texture_filter = 0
+stencil_flags = 2
+stencil_outline_thickness = 0.05

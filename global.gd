@@ -1,0 +1,29 @@
+extends Node
+
+var keyCoinGoal : int = 1
+var currentKeyCoins : int = 0
+var pathProgess : float = 0
+var inLaunchZone : bool = false
+var landing : bool = false
+var playerHit : bool = false
+var playerLvEnd : bool = false
+var inSelection : bool = false
+var selected : bool = false
+var inputBool : bool = false
+var inArea : bool = false
+var jumpIn : bool = false
+var animFinsihed : bool = false
+var launchZonePos : Vector3 = Vector3.ZERO
+var launchZoneRot : Vector3 = Vector3.ZERO
+var playerFlyingPos : Vector3 = Vector3.ZERO
+var playerFlyingRot : Vector3 = Vector3.ZERO
+var lastCamPos : Vector3 = Vector3.ZERO
+var newCamPos : Vector3 = Vector3.ZERO
+var newCamRot : Vector3 = Vector3.ZERO
+var lectern : Vector3 = Vector3.ZERO
+var level1Complete : bool = false
+var pagesCollected : int = 0
+var propellor : bool = false
+var health : int = 3
+var lives : int = 4
+var respawning : bool = false

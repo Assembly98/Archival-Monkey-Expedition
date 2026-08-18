@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b0wjftqk87ywt"]
+
+[ext_resource type="PackedScene" uid="uid://1ukfnb5dspl0" path="res://lectern.blend" id="1_8mqo3"]
+[ext_resource type="Script" uid="uid://bcir817rbh5x4" path="res://lecturnGD.gd" id="2_l7hhv"]
+[ext_resource type="Texture2D" uid="uid://c6vr3r6w7t1jn" path="res://level1_bridgeTexturepng.png" id="3_hhdn8"]
+[ext_resource type="PackedScene" uid="uid://b2vse2hlxo06j" path="res://bookUsableGD.tscn" id="3_iq18k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kagk"]
+albedo_texture = ExtResource("3_hhdn8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iq18k"]
+size = Vector3(2.7559814, 2.0910645, 1.4474487)
+
+[node name="lectern" unique_id=1318894515 instance=ExtResource("1_8mqo3")]
+script = ExtResource("2_l7hhv")
+
+[node name="Cube_002" parent="." index="2" unique_id=1185146066]
+material_override = SubResource("StandardMaterial3D_1kagk")
+
+[node name="Area3D" type="Area3D" parent="." index="4" unique_id=854157440]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=533077804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006713867, -0.4144287, -0.22372437)
+shape = SubResource("BoxShape3D_iq18k")
+
+[node name="newCamPos" type="Node3D" parent="." index="5" unique_id=1069551145]
+transform = Transform3D(1, 0, 0, 0, 0.8640572, 0.50339365, 0, -0.50339365, 0.8640572, 0, 3.5699134, 1.845145)
+
+[node name="newCamPos2" type="Node3D" parent="." index="6" unique_id=1994863704]
+transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.70710677, 0.70710677, 8.742278e-08, 0.70710677, -0.70710677, 0, 4.1991596, -1.4709488)
+
+[node name="Camera3D" type="Camera3D" parent="newCamPos2" index="0" unique_id=15937274]
+
+[node name="bookUsable" parent="." index="7" unique_id=1730270858 instance=ExtResource("3_iq18k")]
+transform = Transform3D(-3.7090335e-09, -3.8635783e-09, 0.125, -0.08485281, 0.08838835, 9.420555e-16, -0.084852815, -0.088388346, -5.4639235e-09, -0.91138846, 1.7802827, 0.035594463)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

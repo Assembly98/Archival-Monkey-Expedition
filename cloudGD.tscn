@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cp1t34slinomp"]
+
+[ext_resource type="PackedScene" uid="uid://cwiag0qr5tt40" path="res://cloud.blend" id="1_srwd2"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_4anx1"]
+
+[sub_resource type="Gradient" id="Gradient_vyv0q"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkfkn"]
+gradient = SubResource("Gradient_vyv0q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31qij"]
+render_priority = 0
+shader = ExtResource("2_4anx1")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_fkfkn")
+
+[node name="cloud" unique_id=892910299 instance=ExtResource("1_srwd2")]
+
+[node name="Mball_001" parent="." index="0" unique_id=677777770]
+surface_material_override/0 = SubResource("ShaderMaterial_31qij")

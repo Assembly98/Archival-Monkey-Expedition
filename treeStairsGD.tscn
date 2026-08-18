@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://d3irfwbql4f4i"]
+
+[ext_resource type="PackedScene" uid="uid://b5g623mhp1yhi" path="res://treeStairs.blend" id="1_vuqvk"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_6ayui"]
+[ext_resource type="Texture2D" uid="uid://eje82uptl8fm" path="res://treeTrunkTextures.png" id="3_8a4dm"]
+
+[sub_resource type="Gradient" id="Gradient_lghrq"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.096204735, 0.09620475, 0.096204735, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f4r2r"]
+gradient = SubResource("Gradient_lghrq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efl46"]
+render_priority = 0
+shader = ExtResource("2_6ayui")
+shader_parameter/albedo_texture = ExtResource("3_8a4dm")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_f4r2r")
+
+[sub_resource type="Gradient" id="Gradient_6ayui"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ve53p"]
+gradient = SubResource("Gradient_6ayui")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsxpj"]
+render_priority = 0
+shader = ExtResource("2_6ayui")
+shader_parameter/albedo_texture = ExtResource("3_8a4dm")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_ve53p")
+
+[node name="treeStairs" unique_id=1765074123 instance=ExtResource("1_vuqvk")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1777756812]
+surface_material_override/0 = SubResource("ShaderMaterial_efl46")
+
+[node name="Icosphere" parent="." index="1" unique_id=1801021234]
+surface_material_override/0 = SubResource("ShaderMaterial_gsxpj")
+
+[node name="Icosphere_001" parent="." index="2" unique_id=532387677]
+surface_material_override/0 = SubResource("ShaderMaterial_gsxpj")
+
+[node name="Icosphere_002" parent="." index="3" unique_id=1474091862]
+surface_material_override/0 = SubResource("ShaderMaterial_gsxpj")
+
+[node name="Icosphere_003" parent="." index="4" unique_id=1880938444]
+surface_material_override/0 = SubResource("ShaderMaterial_gsxpj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="5" unique_id=278408500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.527954, -1.8930359)
+light_energy = 0.1
+omni_range = 7.0
+omni_attenuation = -10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="6" unique_id=1020657035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7264252, 1.4846191, 0.20812988)
+light_energy = 0.1
+omni_range = 7.0
+omni_attenuation = -10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." index="7" unique_id=873547387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22480774, -0.37475586, 1.8982849)
+light_energy = 0.1
+omni_range = 7.0
+omni_attenuation = -10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." index="8" unique_id=593113536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9279995, -1.1384277, 0.35327625)
+light_energy = 0.1
+omni_range = 7.0
+omni_attenuation = -10.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." index="9" unique_id=1858096593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5979214, -1.8225555, -0.97077465)
+light_energy = 0.1
+omni_range = 7.0
+omni_attenuation = -10.0

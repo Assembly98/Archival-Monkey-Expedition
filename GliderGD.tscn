@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dqs7100ta6dh4"]
+
+[ext_resource type="PackedScene" uid="uid://defyj4tpjpd84" path="res://glider.blend" id="1_jcev2"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_wuw8o"]
+[ext_resource type="Texture2D" uid="uid://eje82uptl8fm" path="res://treeTrunkTextures.png" id="3_m6fvs"]
+
+[sub_resource type="Gradient" id="Gradient_o8c8b"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_afjpo"]
+gradient = SubResource("Gradient_o8c8b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8i1i"]
+render_priority = 0
+shader = ExtResource("2_wuw8o")
+shader_parameter/albedo_texture = ExtResource("3_m6fvs")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_afjpo")
+
+[node name="glider" unique_id=1181518664 instance=ExtResource("1_jcev2")]
+
+[node name="Plane" parent="." index="0" unique_id=1677836878]
+surface_material_override/0 = SubResource("ShaderMaterial_v8i1i")
+
+[node name="Cylinder" parent="." index="1" unique_id=1335220651]
+surface_material_override/0 = SubResource("ShaderMaterial_v8i1i")

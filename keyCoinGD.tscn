@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cm500s2dnu25d"]
+
+[ext_resource type="PackedScene" uid="uid://li77ya7etrxr" path="res://keyCoin.blend" id="1_7h5e0"]
+[ext_resource type="Texture2D" uid="uid://cin4vpveo2o0w" path="res://keyTexture.png" id="2_e6cj4"]
+[ext_resource type="Material" uid="uid://c7gmxc40g6yu0" path="res://outline.tres" id="3_1mad1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mad1"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("2_e6cj4")
+texture_filter = 0
+
+[node name="keyCoin" unique_id=41194009 instance=ExtResource("1_7h5e0")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1112597277]
+surface_material_override/0 = SubResource("StandardMaterial3D_1mad1")
+surface_material_override/1 = ExtResource("3_1mad1")

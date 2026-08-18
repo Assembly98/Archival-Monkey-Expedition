@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://edwxpkektve7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1odxm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jcv8b"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mtr83"]
+
+[node name="planet" type="StaticBody3D" unique_id=1907660838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=819569160]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1odxm")
+
+[node name="StaticBody3D" type="Area3D" parent="." unique_id=672632720]
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector3(0, 0, 0)
+gravity_direction = Vector3(0, 0, 0)
+gravity = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=352128042]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_jcv8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=893313573]
+transform = Transform3D(0.45454547, 0, 0, 0, 0.45454547, 0, 0, 0, 0.45454547, 0, 0, 0)
+mesh = SubResource("SphereMesh_mtr83")
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="body_exited" from="StaticBody3D" to="." method="_on_static_body_3d_body_exited"]

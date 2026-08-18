@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ct4fmmyelvwaq"]
+
+[ext_resource type="Script" uid="uid://cq680t0oc3x73" path="res://testWorld.gd" id="1_74u7v"]
+[ext_resource type="PackedScene" uid="uid://ufw6fks88epw" path="res://monkeyResources/Monkey.tscn" id="2_74u7v"]
+[ext_resource type="PackedScene" uid="uid://becal6k3eb258" path="res://test_world_blend.tscn" id="2_i7llj"]
+[ext_resource type="PackedScene" uid="uid://ds0hnhs0jt0xy" path="res://launchZone.tscn" id="4_cjeqb"]
+[ext_resource type="Curve3D" uid="uid://bo8nf11kdp2ea" path="res://testCurve.tres" id="5_y4ur2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i7llj"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_74u7v"]
+sky_material = SubResource("ProceduralSkyMaterial_i7llj")
+
+[sub_resource type="Environment" id="Environment_cjeqb"]
+background_mode = 2
+sky = SubResource("Sky_74u7v")
+tonemap_mode = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i7llj"]
+radius = 55.17015
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i7llj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i7llj"]
+
+[node name="Node3D" type="Node3D" unique_id=1336120101]
+script = ExtResource("1_74u7v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1619869557]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1277254457]
+environment = SubResource("Environment_cjeqb")
+
+[node name="Monkey" parent="." unique_id=937305560 instance=ExtResource("2_74u7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.837704, 1, 22.938457)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1293055975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57.067818, 142.5)
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector3(0, 0, 0)
+gravity_direction = Vector3(0, 0, 0)
+gravity = 55.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1839573888]
+shape = SubResource("SphereShape3D_i7llj")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=2084863061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.10033, 119.17935)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=234944453]
+shape = SubResource("CapsuleShape3D_i7llj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=864682516]
+mesh = SubResource("CapsuleMesh_i7llj")
+
+[node name="testWorld" parent="." unique_id=309718770 instance=ExtResource("2_i7llj")]
+
+[node name="launchZone" parent="." unique_id=2079596268 instance=ExtResource("4_cjeqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.58029, 5, -115.487)
+
+[node name="Path3D" type="Path3D" parent="launchZone" unique_id=1704758162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.45501, -10.512814, 0)
+curve = ExtResource("5_y4ur2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="launchZone/Path3D" unique_id=147204992]
+transform = Transform3D(-0.9307098, -0.36436984, -0.031708267, 0, 0.086695604, -0.9962349, 0.36574256, -0.92721665, -0.08068843, 48.10182, 10.525467, 0)
+rotation_mode = 4
+
+[node name="Node3D" type="Node3D" parent="launchZone/Path3D/PathFollow3D" unique_id=376101426]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

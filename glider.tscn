@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://vg2rpgdb8kk0"]
+
+[ext_resource type="Script" uid="uid://p2ru7tcgxp75" path="res://glider.gd" id="1_swtu7"]
+[ext_resource type="PackedScene" uid="uid://dqs7100ta6dh4" path="res://GliderGD.tscn" id="2_7mdsv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 1.3423076
+
+[node name="glider" type="Area3D" unique_id=759505544]
+transform = Transform3D(1, 0, 0, 0, 0.9563048, 0.2923717, 0, -0.2923717, 0.9563048, 0, 0, 0)
+script = ExtResource("1_swtu7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2090364304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05750251, 0, 0)
+shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="glider" parent="." unique_id=1181518664 instance=ExtResource("2_7mdsv")]
+transform = Transform3D(1, 0, 0, 0, 0.9563048, -0.2923717, 0, 0.2923717, 0.9563048, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

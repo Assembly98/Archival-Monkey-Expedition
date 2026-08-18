@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c2h6tvsq0dl5p"]
+
+[ext_resource type="PackedScene" uid="uid://b7fc4h7a50iss" path="res://appleScholar.blend" id="1_wdysu"]
+[ext_resource type="Material" uid="uid://c7gmxc40g6yu0" path="res://outline.tres" id="2_1d1es"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="3_4stcy"]
+[ext_resource type="Texture2D" uid="uid://doyn4rc2s4i66" path="res://appleTextureTemp.png" id="4_vo5q7"]
+
+[sub_resource type="Gradient" id="Gradient_kd1nq"]
+offsets = PackedFloat32Array(0.5, 0.51)
+colors = PackedColorArray(0.093160845, 0.093160845, 0.09316083, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a5m3r"]
+gradient = SubResource("Gradient_kd1nq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06xjb"]
+render_priority = 0
+shader = ExtResource("3_4stcy")
+shader_parameter/albedo_texture = ExtResource("4_vo5q7")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_a5m3r")
+
+[node name="appleScholar" unique_id=1708473739 instance=ExtResource("1_wdysu")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(314145474) index="0" unique_id=1414093431]
+bones/3/rotation = Quaternion(-0.42213243, 0.1909526, 0.4366842, 0.77113444)
+bones/3/scale = Vector3(0.9999998, 0.99999994, 1)
+bones/5/position = Vector3(-2.875466e-07, 0.12686199, 1.2060581)
+bones/6/position = Vector3(6.116984e-07, 0.110336214, -1.2110665)
+bones/7/position = Vector3(-1.10893744e-07, 0.021710439, 0.46512195)
+bones/7/rotation = Quaternion(-0.70649123, 0.029494883, 0.70649153, -0.02949449)
+bones/8/position = Vector3(1.16860036e-07, 0.033191234, -0.49014643)
+bones/8/rotation = Quaternion(-0.7065108, -0.029015422, 0.70651174, 0.029015034)
+
+[node name="Bone_004" parent="Armature/Skeleton3D" index="0" unique_id=749081978]
+transform = Transform3D(0.54568774, -0.8346991, -0.074176714, 0.51226974, 0.26222226, 0.81781363, -0.6631774, -0.4842695, 0.57068264, -0.00491821, 0.8896677, -0.10349342)
+
+[node name="Plane" parent="Armature/Skeleton3D/Bone_004" index="0" unique_id=20741894]
+surface_material_override/1 = ExtResource("2_1d1es")
+
+[node name="Cylinder" parent="Armature/Skeleton3D/Bone_005" parent_id_path=PackedInt32Array(528809437) index="0" unique_id=506503129]
+surface_material_override/1 = ExtResource("2_1d1es")
+
+[node name="hand_R" parent="Armature/Skeleton3D" index="3" unique_id=1709227332]
+transform = Transform3D(-4.7683716e-07, -2.842171e-14, -1, -1, 0, 4.7683716e-07, 1.13686824e-13, 0.99999994, -2.842171e-14, 2.842171e-14, -0.6379526, 1.2060581)
+
+[node name="Sphere_001" parent="Armature/Skeleton3D/hand_R" index="0" unique_id=2067524072]
+surface_material_override/0 = SubResource("ShaderMaterial_06xjb")
+surface_material_override/1 = ExtResource("2_1d1es")
+
+[node name="hand_L" parent="Armature/Skeleton3D" index="4" unique_id=324534846]
+transform = Transform3D(-5.9604645e-07, 2.842171e-14, -1, 1, -1.1920928e-07, -5.9604645e-07, -1.1920915e-07, -0.99999994, -2.842171e-14, 3.2295767e-07, -0.65447843, -1.2110665)
+
+[node name="Sphere" parent="Armature/Skeleton3D/hand_L" index="0" unique_id=1191412375]
+surface_material_override/0 = SubResource("ShaderMaterial_06xjb")
+surface_material_override/1 = ExtResource("2_1d1es")
+
+[node name="Cube" parent="Armature/Skeleton3D" index="5" unique_id=2114663671]
+surface_material_override/0 = SubResource("ShaderMaterial_06xjb")
+surface_material_override/1 = ExtResource("2_1d1es")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=920536270]
+autoplay = &"Idle"
+speed_scale = 1.25

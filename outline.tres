@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7gmxc40g6yu0"]
+
+[resource]
+resource_name = "outline"
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)

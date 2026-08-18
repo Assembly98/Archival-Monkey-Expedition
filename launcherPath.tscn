@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cnttqbnjv4xse"]
+
+[ext_resource type="Curve3D" uid="uid://bo8nf11kdp2ea" path="res://testCurve.tres" id="1_io0wl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cjeqb"]
+
+[node name="Path3D" type="Path3D" unique_id=2022016164]
+curve = ExtResource("1_io0wl")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=2144826392]
+transform = Transform3D(1.3800879e-07, 0.94709355, 0.32091698, -5.9604094e-08, 0.32091573, -0.94709724, -0.9999912, 1.1158035e-07, 1.00741126e-07, -0.39091492, 10.525467, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D" unique_id=238946646]
+transform = Transform3D(1, 1.7763568e-15, 0, -1.7763568e-15, 1, -2.9802326e-08, 7.1054274e-15, -1.7999296e-15, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_cjeqb")

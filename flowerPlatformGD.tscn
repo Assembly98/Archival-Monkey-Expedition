@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dtv15nbcsq3ka"]
+
+[ext_resource type="PackedScene" uid="uid://dg7ryook1e1y7" path="res://flowerPlatform.blend" id="1_ybeny"]
+[ext_resource type="Script" uid="uid://dpc5q376bamnx" path="res://bounceTrigger.gd" id="2_24mn5"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_efe8x"]
+[ext_resource type="Texture2D" uid="uid://mtl4smkdb0fv" path="res://flowerTextures.png" id="3_5slhb"]
+
+[sub_resource type="Gradient" id="Gradient_qvxk1"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k15uh"]
+gradient = SubResource("Gradient_qvxk1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0oiix"]
+render_priority = 0
+shader = ExtResource("2_efe8x")
+shader_parameter/albedo_texture = ExtResource("3_5slhb")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_k15uh")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 0.09176636
+radius = 1.7119141
+
+[node name="flowerPlatform" unique_id=1891698619 instance=ExtResource("1_ybeny")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1120886803]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="0" unique_id=1485412402]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_001" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="1" unique_id=1992433379]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_002" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="2" unique_id=117003133]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_003" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="3" unique_id=1415121655]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_004" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="4" unique_id=948462839]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_005" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="5" unique_id=791504856]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_006" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="6" unique_id=248093179]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_007" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="7" unique_id=1980229544]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_008" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="8" unique_id=986691917]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_009" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="9" unique_id=527332734]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_010" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="10" unique_id=94542864]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_011" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="11" unique_id=1442216058]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_012" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="12" unique_id=777005388]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_013" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="13" unique_id=1536243777]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_014" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="14" unique_id=2062966502]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Plane_015" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="15" unique_id=1420332048]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="Sphere_001" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1036106259) index="16" unique_id=479882453]
+surface_material_override/0 = SubResource("ShaderMaterial_0oiix")
+
+[node name="AnimationPlayer" parent="." index="4" unique_id=284177067]
+speed_scale = 3.5
+
+[node name="Area3D" type="Area3D" parent="." index="5" unique_id=1614312987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.055592418, 0)
+script = ExtResource("2_24mn5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=353103363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3334465, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

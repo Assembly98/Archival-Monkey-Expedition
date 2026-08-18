@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ds0hnhs0jt0xy"]
+
+[ext_resource type="Script" uid="uid://5xy1imgrwm8r" path="res://launch_zone.gd" id="1_dhjns"]
+[ext_resource type="PackedScene" uid="uid://cmcdugn1vf6vq" path="res://starLauncherGD.tscn" id="2_3apuv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nac06"]
+radius = 3.5
+
+[node name="launchZone" type="Area3D" unique_id=2079596268]
+script = ExtResource("1_dhjns")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=707977096]
+shape = SubResource("SphereShape3D_nac06")
+
+[node name="starLauncher" parent="." unique_id=25619328 instance=ExtResource("2_3apuv")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -4.5896406, -1.05)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

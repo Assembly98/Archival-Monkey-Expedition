@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bsgawqfgqyitb"]
+
+[ext_resource type="PackedScene" uid="uid://bnxtkjnhmavs" path="res://tree.blend" id="1_d0ka0"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_nfcwv"]
+[ext_resource type="Texture2D" uid="uid://bs3wfxvgx5iqv" path="res://treeTextures.png" id="3_2r6sq"]
+
+[sub_resource type="Gradient" id="Gradient_675oy"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.096204735, 0.09620475, 0.096204735, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nfcwv"]
+gradient = SubResource("Gradient_675oy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ro7bk"]
+render_priority = 0
+shader = ExtResource("2_nfcwv")
+shader_parameter/albedo_texture = ExtResource("3_2r6sq")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_nfcwv")
+
+[node name="tree" unique_id=983771157 instance=ExtResource("1_d0ka0")]
+
+[node name="Icosphere_002" parent="." index="0" unique_id=764687180]
+surface_material_override/0 = SubResource("ShaderMaterial_ro7bk")
+surface_material_override/1 = SubResource("ShaderMaterial_ro7bk")

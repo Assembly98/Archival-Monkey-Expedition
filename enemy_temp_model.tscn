@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cqpksp3jecmq4"]
+
+[ext_resource type="PackedScene" uid="uid://d3yev3kdryll4" path="res://enemyTemp.blend" id="1_a816l"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_xbano"]
+[ext_resource type="Texture2D" uid="uid://cx6o0t3n2pg3a" path="res://enemyTemp_tempEnemy.png" id="3_xbano"]
+
+[sub_resource type="Gradient" id="Gradient_31qlf"]
+offsets = PackedFloat32Array(0.5, 0.51)
+colors = PackedColorArray(0.017020682, 0.017020678, 0.017020678, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_axxc2"]
+gradient = SubResource("Gradient_31qlf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6ah4"]
+render_priority = 0
+shader = ExtResource("2_xbano")
+shader_parameter/albedo_texture = ExtResource("3_xbano")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_axxc2")
+
+[node name="enemyTempModel" unique_id=1693594071 instance=ExtResource("1_a816l")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(581586913) index="0" unique_id=1914653664]
+bones/1/position = Vector3(-0.3812611, 0.79190004, 0.58009344)
+bones/1/rotation = Quaternion(0.55192864, -0.46493572, -0.5053813, 0.47307432)
+bones/1/scale = Vector3(0.7283075, 0.7283076, 0.7283076)
+bones/2/rotation = Quaternion(0.12112075, 0.053632498, -0.27285174, 0.9528932)
+bones/3/rotation = Quaternion(-0.00050339726, 0.016425217, -0.0608784, 0.99801)
+bones/4/position = Vector3(-0.24841247, -0.24002954, 0.30387414)
+bones/4/rotation = Quaternion(-2.6961887e-08, -2.6961887e-08, -0.7071068, 0.7071068)
+bones/5/position = Vector3(-0.3841256, 0.79349464, -0.61122173)
+bones/5/rotation = Quaternion(-0.5067262, -0.4713654, 0.5546447, 0.46196598)
+bones/5/scale = Vector3(0.7283078, 0.7283077, 0.7283077)
+bones/6/rotation = Quaternion(0.13256976, -0.085255556, 0.26747555, 0.9505859)
+bones/7/rotation = Quaternion(0.00064731715, 0.04015808, 0.060877603, 0.9973369)
+bones/8/position = Vector3(-0.25052384, -0.24002953, -0.33264017)
+bones/8/rotation = Quaternion(0.7071068, 0.7071068, -5.3385083e-08, 5.3385083e-08)
+bones/10/rotation = Quaternion(0.11368339, 0.016403135, -0.63275903, 0.76578265)
+bones/10/scale = Vector3(0.99999994, 0.99999994, 0.9999999)
+bones/13/rotation = Quaternion(-0.4475056, -0.07692935, -0.5388799, 0.7095274)
+bones/13/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/16/rotation = Quaternion(0.3985802, 0.051392034, -0.5063155, 0.76297927)
+bones/16/scale = Vector3(0.9999999, 1.0000001, 0.9999999)
+bones/19/rotation = Quaternion(-0.01826125, -0.005140897, 0.44044858, 0.89757746)
+bones/19/scale = Vector3(0.99999994, 0.99999994, 0.9999999)
+
+[node name="BézierCurve" parent="Armature/Skeleton3D" index="4" unique_id=1973651397]
+surface_material_override/0 = SubResource("ShaderMaterial_e6ah4")
+
+[node name="Cube" parent="Armature/Skeleton3D" index="5" unique_id=718996013]
+surface_material_override/0 = SubResource("ShaderMaterial_e6ah4")
+
+[node name="Plane" parent="Armature/Skeleton3D" index="6" unique_id=1306697835]
+surface_material_override/0 = SubResource("ShaderMaterial_e6ah4")
+
+[node name="Plane_001" parent="Armature/Skeleton3D" index="7" unique_id=888618239]
+surface_material_override/0 = SubResource("ShaderMaterial_e6ah4")
+
+[node name="AnimationPlayer" parent="." index="6" unique_id=780648905]
+autoplay = &"Idle"

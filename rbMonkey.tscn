@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dp3xvkke1hgao"]
+
+[ext_resource type="Script" uid="uid://cca1xrm5emu00" path="res://rb_monkey.gd" id="1_wy4ra"]
+[ext_resource type="PackedScene" uid="uid://bov1cobppwkp0" path="res://monkeyResources/monkeyModel.tscn" id="2_skgub"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mfinb"]
+
+[node name="rbMonkey" type="RigidBody3D" unique_id=685318257]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 2.0
+can_sleep = false
+contact_monitor = true
+script = ExtResource("1_wy4ra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1415178685]
+shape = SubResource("CapsuleShape3D_mfinb")
+
+[node name="monkey" parent="." unique_id=1953848482 instance=ExtResource("2_skgub")]
+transform = Transform3D(1.315, 0, 0, 0, 1.315, 0, 0, 0, 1.315, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=59390396]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node3D" unique_id=1118791506]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0)
+spring_length = 7.0
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/SpringArm3D" unique_id=1435203586]
+current = true

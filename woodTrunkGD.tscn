@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cy6e2gm2hab10"]
+
+[ext_resource type="PackedScene" uid="uid://b61ah1jtxtt8m" path="res://woodTrunk.blend" id="1_h4b4s"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_5qile"]
+[ext_resource type="Texture2D" uid="uid://eje82uptl8fm" path="res://treeTrunkTextures.png" id="3_5gmnx"]
+
+[sub_resource type="Gradient" id="Gradient_nac3r"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jh5i1"]
+gradient = SubResource("Gradient_nac3r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pp6ip"]
+render_priority = 0
+shader = ExtResource("2_5qile")
+shader_parameter/albedo_texture = ExtResource("3_5gmnx")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_jh5i1")
+
+[node name="woodTrunk" unique_id=752295999 instance=ExtResource("1_h4b4s")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1443689952]
+surface_material_override/0 = SubResource("ShaderMaterial_pp6ip")

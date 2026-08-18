@@ -1,0 +1,37 @@
+[gd_resource type="VisualShader" format=3 uid="uid://2jnomsfard38"]
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_01joq"]
+default_input_values = [0, Vector3(5, 5, 5), 1, 0.0, 2, 10.0]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_xkp2p"]
+expanded_output_ports = [0]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_o204o"]
+parameter_name = "colorRamp"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_01joq"]
+function = 4
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_xkp2p"]
+operator = 6
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_o204o"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0, 3, 0.0]
+op_type = 0
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeRandomRange_01joq")
+nodes/fragment/2/position = Vector2(-784, 112)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_xkp2p")
+nodes/fragment/3/position = Vector2(-304, 144)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DParameter_o204o")
+nodes/fragment/4/position = Vector2(-720, 416)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorFunc_01joq")
+nodes/fragment/5/position = Vector2(-32, 496)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorOp_xkp2p")
+nodes/fragment/6/position = Vector2(106.839806, 131.41359)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_o204o")
+nodes/fragment/7/position = Vector2(-1024, 96)
+nodes/fragment/connections = PackedInt32Array(4, 0, 3, 2, 3, 4, 0, 1, 6, 0, 0, 0, 3, 0, 5, 0, 2, 0, 3, 0, 7, 0, 2, 0, 3, 0, 6, 0, 5, 0, 6, 1)

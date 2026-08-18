@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://ca3vw3jktwm48"]
+
+[ext_resource type="PackedScene" uid="uid://cqma3ljqnobh1" path="res://woodPlatform.blend" id="1_xvsw4"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_12omp"]
+[ext_resource type="Texture2D" uid="uid://eje82uptl8fm" path="res://treeTrunkTextures.png" id="3_crb2t"]
+
+[sub_resource type="Gradient" id="Gradient_j162l"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.09923177, 0.09923177, 0.09923177, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wfj6t"]
+gradient = SubResource("Gradient_j162l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnttr"]
+render_priority = 0
+shader = ExtResource("2_12omp")
+shader_parameter/albedo_texture = ExtResource("3_crb2t")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_wfj6t")
+
+[sub_resource type="Gradient" id="Gradient_4bisj"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.096204735, 0.09620475, 0.096204735, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_opies"]
+gradient = SubResource("Gradient_4bisj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hoj2j"]
+render_priority = 0
+shader = ExtResource("2_12omp")
+shader_parameter/albedo_texture = ExtResource("3_crb2t")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_opies")
+
+[sub_resource type="Animation" id="Animation_w04wu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.15866576, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.10255496, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_12omp"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.15866576, 0, 0), Vector3(-0.15866576, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.10255496, 0, 0), Vector3(0.10255496, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crb2t"]
+_data = {
+&"RESET": SubResource("Animation_w04wu"),
+&"idle": SubResource("Animation_12omp")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 0.89782715
+radius = 0.90527344
+
+[node name="woodPlatform" unique_id=1696449573 instance=ExtResource("1_xvsw4")]
+
+[node name="Cylinder" parent="." index="0" unique_id=2077355613]
+surface_material_override/0 = SubResource("ShaderMaterial_tnttr")
+
+[node name="Cylinder_001" parent="." index="1" unique_id=1372618075]
+surface_material_override/0 = SubResource("ShaderMaterial_hoj2j")
+
+[node name="Sphere" parent="." index="2" unique_id=1229236047]
+surface_material_override/0 = SubResource("ShaderMaterial_hoj2j")
+
+[node name="Plane" parent="." index="3" unique_id=1501725216]
+transform = Transform3D(0.14694108, 0, 0, 0, 0.22780985, 0.023648266, 0, -0.03645203, 0.14779171, 0, -0.6493879, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_hoj2j")
+
+[node name="Plane_001" parent="." index="4" unique_id=1888550270]
+surface_material_override/0 = SubResource("ShaderMaterial_hoj2j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=69174654]
+libraries/ = SubResource("AnimationLibrary_crb2t")
+autoplay = &"idle"
+speed_scale = 3.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="6" unique_id=1332319122]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1320049990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0020141602, 0)
+shape = SubResource("CylinderShape3D_g4v7s")

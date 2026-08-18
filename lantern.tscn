@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d06xqw7d6aaj3"]
+
+[ext_resource type="PackedScene" uid="uid://kqwtkiwojviv" path="res://lantern.blend" id="1_kxgpu"]
+
+[node name="lantern" unique_id=1698440278 instance=ExtResource("1_kxgpu")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=336712474]
+light_color = Color(1, 0.89411765, 0, 1)
+shadow_bias = 10.0
+shadow_normal_bias = 10.0
+shadow_transmittance_bias = -0.875
+omni_range = 15.0
+omni_attenuation = 0.5

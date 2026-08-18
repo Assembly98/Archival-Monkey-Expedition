@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://cql8p26gjhte5"]
+
+[ext_resource type="Texture2D" uid="uid://41ffxl81mnki" path="res://levelClearSpriteSheet.png" id="1_tuvq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvgb4"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(0, 0, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylfb3"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(1600, 0, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hx8u"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(3200, 0, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77n5k"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(4800, 0, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afalx"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(6400, 0, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6tme"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(0, 900, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juc4r"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(1600, 900, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mucov"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(3200, 900, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi2lp"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(4800, 900, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yavm"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(6400, 900, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmdny"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(0, 1800, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b05vu"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(1600, 1800, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mip1y"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(3200, 1800, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od27f"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(4800, 1800, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv8kl"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(6400, 1800, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8aem"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(0, 2700, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvl4h"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(1600, 2700, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1lct"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(3200, 2700, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr7qo"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(4800, 2700, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64dfo"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(6400, 2700, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08gih"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(0, 3600, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxbp2"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(1600, 3600, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmevk"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(3200, 3600, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icee5"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(4800, 3600, 1600, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klrfp"]
+atlas = ExtResource("1_tuvq7")
+region = Rect2(6400, 3600, 1600, 900)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvgb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylfb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hx8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77n5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afalx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6tme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juc4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mucov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi2lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yavm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmdny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b05vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mip1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od27f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv8kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8aem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvl4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1lct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr7qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64dfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08gih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxbp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmevk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icee5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klrfp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_tuvq7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_gvgb4"]
+resource_name = "new_animation"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:outline_modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 6.55, 6.75, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.052, 0, 1.535), Vector3(3.052, 2.6413603, 1.535), Vector3(3.052, 2.6413603, 1.535), Vector3(3.052, 1.25, 1.535)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylfb3"]
+_data = {
+&"RESET": SubResource("Animation_tuvq7"),
+&"new_animation": SubResource("Animation_gvgb4")
+}
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" unique_id=67613385]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=273361557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.8178797)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1476422958]
+pixel_size = 0.0125
+double_sided = false
+no_depth_test = true
+render_priority = 2
+outline_render_priority = 1
+modulate = Color(0, 0, 0, 1)
+text = "Level Complete"
+font_size = 47
+outline_size = 39
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1687484252]
+libraries/ = SubResource("AnimationLibrary_ylfb3")
+autoplay = &"new_animation"
+speed_scale = 1.4

@@ -1,0 +1,454 @@
+[gd_scene format=3 uid="uid://08vjkxsaoc8c"]
+
+[ext_resource type="PackedScene" uid="uid://cdjavqm8g588d" path="res://hubWorld.blend" id="1_rq3wp"]
+[ext_resource type="Material" uid="uid://c7gmxc40g6yu0" path="res://outline.tres" id="3_khdcd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laeda"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0.40784314, 0, 1)
+
+[node name="hubWorld" unique_id=39515783 instance=ExtResource("1_rq3wp")]
+
+[node name="Cube_001" parent="." index="13" unique_id=266994434]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_003" parent="." index="16" unique_id=1227629200]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_004" parent="." index="17" unique_id=1975242096]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_005" parent="." index="18" unique_id=290002859]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_006" parent="." index="19" unique_id=1178721523]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_007" parent="." index="20" unique_id=1849993490]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_008" parent="." index="21" unique_id=1362406315]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_009" parent="." index="22" unique_id=666795677]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_010" parent="." index="23" unique_id=1958123948]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_011" parent="." index="24" unique_id=1957285196]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_012" parent="." index="25" unique_id=2092201453]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_013" parent="." index="26" unique_id=496423524]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_014" parent="." index="27" unique_id=1758567371]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_015" parent="." index="28" unique_id=687788379]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_016" parent="." index="29" unique_id=442965303]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_017" parent="." index="30" unique_id=1115373835]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_018" parent="." index="31" unique_id=2110923363]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_019" parent="." index="32" unique_id=1010135570]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_020" parent="." index="33" unique_id=82941897]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_021" parent="." index="34" unique_id=1153683483]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_022" parent="." index="35" unique_id=2083987956]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_023" parent="." index="36" unique_id=1152485778]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_024" parent="." index="37" unique_id=1043195768]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_025" parent="." index="38" unique_id=1501473269]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_026" parent="." index="39" unique_id=2058352362]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_027" parent="." index="40" unique_id=2035103021]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_028" parent="." index="41" unique_id=1118705271]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_029" parent="." index="42" unique_id=2022165939]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_030" parent="." index="43" unique_id=3421095]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_031" parent="." index="44" unique_id=1137338270]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_032" parent="." index="45" unique_id=67758522]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_033" parent="." index="46" unique_id=1569253012]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_034" parent="." index="47" unique_id=1840297207]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_035" parent="." index="48" unique_id=306272398]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_036" parent="." index="49" unique_id=1319564930]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_037" parent="." index="50" unique_id=515513474]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_065" parent="." index="51" unique_id=144603126]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_066" parent="." index="52" unique_id=362053177]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_067" parent="." index="53" unique_id=197457205]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_068" parent="." index="54" unique_id=1927544930]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_069" parent="." index="55" unique_id=180255192]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_070" parent="." index="56" unique_id=392719042]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_071" parent="." index="57" unique_id=2112805094]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_072" parent="." index="58" unique_id=494876377]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_073" parent="." index="59" unique_id=1199737443]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_074" parent="." index="60" unique_id=2003912458]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_075" parent="." index="61" unique_id=1509603196]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_076" parent="." index="62" unique_id=782783192]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_077" parent="." index="63" unique_id=1676899388]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_078" parent="." index="64" unique_id=171292586]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_079" parent="." index="65" unique_id=1736058601]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_080" parent="." index="66" unique_id=126672538]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_038" parent="." index="67" unique_id=423288153]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_039" parent="." index="68" unique_id=159463194]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_040" parent="." index="69" unique_id=1253963282]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_041" parent="." index="70" unique_id=1869723167]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_042" parent="." index="71" unique_id=1614328599]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_043" parent="." index="72" unique_id=1114646722]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_044" parent="." index="73" unique_id=960027304]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_045" parent="." index="74" unique_id=92074509]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_046" parent="." index="75" unique_id=693430058]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_047" parent="." index="76" unique_id=103047349]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+
+[node name="Cube_048" parent="." index="77" unique_id=1633164272]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_049" parent="." index="78" unique_id=2058687080]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_050" parent="." index="79" unique_id=1906740510]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_051" parent="." index="80" unique_id=605064091]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_052" parent="." index="81" unique_id=991491183]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_053" parent="." index="82" unique_id=830939224]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_054" parent="." index="83" unique_id=1616969230]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_055" parent="." index="84" unique_id=1550988538]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_056" parent="." index="85" unique_id=1829699228]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_057" parent="." index="86" unique_id=153021286]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_058" parent="." index="87" unique_id=1873011785]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_059" parent="." index="88" unique_id=860283595]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_060" parent="." index="89" unique_id=1281204774]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_061" parent="." index="90" unique_id=1272176848]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_062" parent="." index="91" unique_id=814239439]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_063" parent="." index="92" unique_id=1054649527]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_064" parent="." index="93" unique_id=444243642]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_081" parent="." index="94" unique_id=590144666]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_082" parent="." index="95" unique_id=1886208387]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_083" parent="." index="96" unique_id=1153642949]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_084" parent="." index="97" unique_id=117006889]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_085" parent="." index="98" unique_id=1180944192]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_086" parent="." index="99" unique_id=1192493928]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_087" parent="." index="100" unique_id=545158839]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_088" parent="." index="101" unique_id=1851195575]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_089" parent="." index="102" unique_id=548000845]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_090" parent="." index="103" unique_id=844499163]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_091" parent="." index="104" unique_id=650364147]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_092" parent="." index="105" unique_id=1545402042]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_093" parent="." index="106" unique_id=559921809]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_094" parent="." index="107" unique_id=563279442]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_095" parent="." index="108" unique_id=1655555164]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_096" parent="." index="109" unique_id=28740056]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_097" parent="." index="110" unique_id=1712318944]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_098" parent="." index="111" unique_id=1055701073]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_099" parent="." index="112" unique_id=763221970]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_100" parent="." index="113" unique_id=1457326917]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_101" parent="." index="114" unique_id=25296489]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_102" parent="." index="115" unique_id=1288465635]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_103" parent="." index="116" unique_id=717517004]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_104" parent="." index="117" unique_id=575548838]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_105" parent="." index="118" unique_id=1645700436]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_106" parent="." index="119" unique_id=494460081]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_107" parent="." index="120" unique_id=363234477]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_108" parent="." index="121" unique_id=431168437]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_109" parent="." index="122" unique_id=723683444]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_110" parent="." index="123" unique_id=535896762]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_111" parent="." index="124" unique_id=1224327086]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")
+
+[node name="Cube_112" parent="." index="125" unique_id=1526959807]
+surface_material_override/0 = SubResource("StandardMaterial3D_laeda")
+surface_material_override/1 = ExtResource("3_khdcd")

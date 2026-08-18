@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cmcdugn1vf6vq"]
+
+[ext_resource type="PackedScene" uid="uid://dl2x81apy6twy" path="res://starLauncherTemp.blend" id="1_6jllt"]
+[ext_resource type="Material" uid="uid://c7gmxc40g6yu0" path="res://outline.tres" id="2_vddyd"]
+
+[node name="starLauncher" unique_id=25619328 instance=ExtResource("1_6jllt")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1620823879) index="0" unique_id=1065954208]
+bones/0/position = Vector3(-1.00908286e-16, -0.45445043, -1.9864657e-08)
+bones/0/rotation = Quaternion(0, 0, 0.084072925, 0.9964596)
+bones/1/position = Vector3(-2.0882234e-16, -0.4544504, -0.4860016)
+bones/1/rotation = Quaternion(0, 0, -0.074458465, 0.99722415)
+
+[node name="Bone" parent="Armature/Skeleton3D" index="0" unique_id=402044184]
+transform = Transform3D(0.9858636, -0.16755056, 0, 0.16755056, 0.9858636, 0, 0, 0, 1.0000001, -1.00908286e-16, -0.45445043, -1.9864657e-08)
+
+[node name="Circle_001" parent="Armature/Skeleton3D/Bone" index="0" unique_id=1701763844]
+surface_material_override/1 = ExtResource("2_vddyd")
+
+[node name="Bone_001" parent="Armature/Skeleton3D" index="1" unique_id=211263039]
+transform = Transform3D(0.988912, 0.14850357, 0, -0.14850357, 0.988912, 0, 0, 0, 1.0000001, -2.0882234e-16, -0.4544504, -0.4860016)
+
+[node name="Circle" parent="Armature/Skeleton3D/Bone_001" index="0" unique_id=658378863]
+surface_material_override/1 = ExtResource("2_vddyd")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=2115973185]
+autoplay = &"Idle"
+next/windup = &"launch"

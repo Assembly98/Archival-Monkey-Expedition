@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://becal6k3eb258"]
+
+[ext_resource type="PackedScene" uid="uid://d2ox8pjknqeu4" path="res://testWorld.blend" id="1_kag28"]
+[ext_resource type="Texture2D" uid="uid://dms33du8wqjv0" path="res://ColorGrid.png" id="2_kag28"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yegsh"]
+albedo_texture = ExtResource("2_kag28")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kag28"]
+albedo_texture = ExtResource("2_kag28")
+
+[node name="testWorld" unique_id=309718770 instance=ExtResource("1_kag28")]
+
+[node name="Plane" parent="." index="0" unique_id=1201654468]
+material_override = SubResource("StandardMaterial3D_yegsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_kag28")

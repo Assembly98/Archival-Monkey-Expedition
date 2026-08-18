@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://cqmen2fvnvyjr"]
+
+[ext_resource type="PackedScene" uid="uid://lq7dfu1id4l3" path="res://level1.blend" id="1_evl8l"]
+[ext_resource type="Texture2D" uid="uid://c5650yjakwt83" path="res://bridgeTexturepng.png" id="2_c1x4y"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_kxvgg"]
+[ext_resource type="Texture2D" uid="uid://dafwlqogeh6vi" path="res://level1grassbricktextture.png" id="3_pdbt8"]
+[ext_resource type="Texture2D" uid="uid://c6vr3r6w7t1jn" path="res://level1_bridgeTexturepng.png" id="5_7qp0h"]
+[ext_resource type="Texture2D" uid="uid://vxo4o4dmhjxs" path="res://grassDirt.png" id="6_mck11"]
+[ext_resource type="Texture2D" uid="uid://csl43wx14ch2x" path="res://level1_grassDirt.png" id="7_1gaeg"]
+[ext_resource type="Texture2D" uid="uid://do0717u5qsx8a" path="res://level1_level1grassbricktextture.png" id="8_07dmn"]
+
+[sub_resource type="Gradient" id="Gradient_7qp0h"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mck11"]
+gradient = SubResource("Gradient_7qp0h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7qp0h"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("3_pdbt8")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_mck11")
+
+[sub_resource type="Gradient" id="Gradient_pdbt8"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7qp0h"]
+gradient = SubResource("Gradient_pdbt8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mck11"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("2_c1x4y")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_7qp0h")
+
+[sub_resource type="Gradient" id="Gradient_mck11"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1gaeg"]
+gradient = SubResource("Gradient_mck11")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07dmn"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("3_pdbt8")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_1gaeg")
+
+[sub_resource type="Gradient" id="Gradient_1gaeg"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_07dmn"]
+gradient = SubResource("Gradient_1gaeg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8wf6"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("3_pdbt8")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_07dmn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gaeg"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("5_7qp0h")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_07dmn")
+
+[sub_resource type="Gradient" id="Gradient_07dmn"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xqn80"]
+gradient = SubResource("Gradient_07dmn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8m6i"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("6_mck11")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_xqn80")
+
+[sub_resource type="Gradient" id="Gradient_g8wf6"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nato3"]
+gradient = SubResource("Gradient_g8wf6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nato3"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("7_1gaeg")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_nato3")
+
+[sub_resource type="Gradient" id="Gradient_nato3"]
+offsets = PackedFloat32Array(0.5, 0.51)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qbd15"]
+gradient = SubResource("Gradient_nato3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hs517"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("8_07dmn")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_qbd15")
+
+[sub_resource type="Gradient" id="Gradient_3g2ah"]
+offsets = PackedFloat32Array(0.5, 0.51)
+colors = PackedColorArray(0.52906674, 0.5290667, 0.5290667, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yf5fn"]
+gradient = SubResource("Gradient_3g2ah")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+render_priority = 0
+shader = ExtResource("2_kxvgg")
+shader_parameter/albedo_texture = ExtResource("8_07dmn")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_yf5fn")
+
+[node name="level1" unique_id=804919701 instance=ExtResource("1_evl8l")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1950642100]
+surface_material_override/0 = SubResource("ShaderMaterial_7qp0h")
+
+[node name="Cube" parent="." index="1" unique_id=1349124904]
+surface_material_override/0 = SubResource("ShaderMaterial_mck11")
+
+[node name="Cylinder_001" parent="." index="3" unique_id=995457580]
+surface_material_override/0 = SubResource("ShaderMaterial_07dmn")
+
+[node name="Cylinder_002" parent="." index="4" unique_id=821913542]
+surface_material_override/0 = SubResource("ShaderMaterial_07dmn")
+
+[node name="Cylinder_003" parent="." index="8" unique_id=328971250]
+surface_material_override/0 = SubResource("ShaderMaterial_g8wf6")
+
+[node name="Cube-col_002" parent="." index="9" unique_id=211965246]
+surface_material_override/0 = SubResource("ShaderMaterial_1gaeg")
+
+[node name="Cylinder_004" parent="." index="10" unique_id=2006401277]
+surface_material_override/0 = SubResource("ShaderMaterial_g8wf6")
+
+[node name="Cube_001_005" parent="." index="11" unique_id=539757742]
+surface_material_override/0 = SubResource("ShaderMaterial_b8m6i")
+
+[node name="Cube_001_001" parent="." index="12" unique_id=1118633447]
+surface_material_override/0 = SubResource("ShaderMaterial_nato3")
+
+[node name="Cube_001_002" parent="." index="13" unique_id=480777954]
+surface_material_override/0 = SubResource("ShaderMaterial_nato3")
+
+[node name="Cube_001_003" parent="." index="14" unique_id=1626142698]
+surface_material_override/0 = SubResource("ShaderMaterial_b8m6i")
+
+[node name="Cylinder_006" parent="." index="20" unique_id=1699285255]
+surface_material_override/0 = SubResource("ShaderMaterial_hs517")
+
+[node name="Cylinder_007" parent="." index="23" unique_id=1773294775]
+surface_material_override/0 = SubResource("ShaderMaterial_g4v7s")
+
+[node name="Cylinder_008" parent="." index="24" unique_id=336709685]
+surface_material_override/0 = SubResource("ShaderMaterial_g4v7s")
+
+[node name="Cylinder_009" parent="." index="25" unique_id=421432008]
+surface_material_override/0 = SubResource("ShaderMaterial_g4v7s")
+
+[node name="Cylinder_010" parent="." index="26" unique_id=973786656]
+surface_material_override/0 = SubResource("ShaderMaterial_g4v7s")

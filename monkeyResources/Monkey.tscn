@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://ufw6fks88epw"]
+
+[ext_resource type="Script" uid="uid://bsa63b48sxu6o" path="res://monkeyResources/monkeyStates/monkeyScript.gd" id="1_2rred"]
+[ext_resource type="PackedScene" uid="uid://bov1cobppwkp0" path="res://monkeyResources/monkeyModel.tscn" id="3_n3274"]
+[ext_resource type="Script" uid="uid://ccwj86altparv" path="res://monkeyResources/monkeyStates/stateMachine.gd" id="4_hxfgi"]
+[ext_resource type="Script" uid="uid://cn70xxrslbmg" path="res://monkeyResources/monkeyStates/Idle.gd" id="5_bt2op"]
+[ext_resource type="Script" uid="uid://dhgc7fviwp7x1" path="res://monkeyResources/monkeyStates/moving.gd" id="6_wxuiu"]
+[ext_resource type="Script" uid="uid://xh6q7ineduyc" path="res://monkeyResources/monkeyStates/inAir.gd" id="7_ep47w"]
+[ext_resource type="Script" uid="uid://d36y4a6eywmk4" path="res://monkeyResources/monkeyStates/spinJump.gd" id="8_v7nsr"]
+[ext_resource type="Script" uid="uid://d1fu3dti38a1g" path="res://monkeyResources/monkeyStates/longJump.gd" id="9_hstm8"]
+[ext_resource type="Script" uid="uid://bgxo0p6j83ivs" path="res://monkeyResources/monkeyStates/dive.gd" id="10_mxtaf"]
+[ext_resource type="Script" uid="uid://cxemrh7qf78eq" path="res://monkeyResources/monkeyStates/onWall.gd" id="11_s1lxv"]
+[ext_resource type="Script" uid="uid://mra0ufcc3st4" path="res://monkeyResources/monkeyStates/crouching.gd" id="12_au1rs"]
+[ext_resource type="Script" uid="uid://3r8x4xnng6gr" path="res://monkeyResources/monkeyStates/backFlipping.gd" id="13_2rred"]
+[ext_resource type="Script" uid="uid://qvjdbvrnmgsd" path="res://monkeyResources/monkeyStates/crouchMove.gd" id="14_6ogdw"]
+[ext_resource type="Script" uid="uid://bkeidnialndd2" path="res://monkeyResources/monkeyStates/flying.gd" id="15_glr5n"]
+[ext_resource type="Script" uid="uid://db1t2apmdbuy1" path="res://monkeyResources/monkeyStates/spinAttack.gd" id="16_6d4un"]
+[ext_resource type="Script" uid="uid://82l55mhp87cd" path="res://monkeyResources/monkeyStates/isHit.gd" id="16_me8x2"]
+[ext_resource type="Script" uid="uid://cp8cadalfbsmx" path="res://monkeyResources/monkeyStates/playerEnd.gd" id="17_5cjdm"]
+[ext_resource type="Script" uid="uid://vepj4lliwcy6" path="res://monkeyResources/monkeyStates/levelChoosing.gd" id="18_r6ncv"]
+[ext_resource type="Script" uid="uid://1mb34osvif1h" path="res://monkeyResources/monkeyStates/levelEnter.gd" id="19_uwok7"]
+[ext_resource type="Script" uid="uid://ehwit5swnunb" path="res://monkeyResources/monkeyStates/propeller.gd" id="20_r6ncv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n3274"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 0.1954956
+radius = 0.59277344
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yf5fn"]
+height = 0.1
+
+[node name="Monkey" type="CharacterBody3D" unique_id=937305560]
+floor_snap_length = 0.25
+script = ExtResource("1_2rred")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1994550324]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Node3D" unique_id=728979441]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+spring_length = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/SpringArm3D" unique_id=1290360362]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1910122936]
+shape = SubResource("CapsuleShape3D_n3274")
+
+[node name="monkey" parent="." unique_id=742637396 instance=ExtResource("3_n3274")]
+transform = Transform3D(1.315, 0, 0, 0, 1.315, 0, 0, 0, 1.315, 0, 0, 0)
+
+[node name="StateMachine" type="Node" parent="." unique_id=2057900032 node_paths=PackedStringArray("initialState")]
+script = ExtResource("4_hxfgi")
+initialState = NodePath("levelEnter")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=45845055 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("5_bt2op")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://cn70xxrslbmg"
+
+[node name="moving" type="Node" parent="StateMachine" unique_id=137112945 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("6_wxuiu")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://dhgc7fviwp7x1"
+
+[node name="inAir" type="Node" parent="StateMachine" unique_id=1866599018 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("7_ep47w")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://xh6q7ineduyc"
+
+[node name="spinJump" type="Node" parent="StateMachine" unique_id=1726451221 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("8_v7nsr")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://d36y4a6eywmk4"
+
+[node name="longJump" type="Node" parent="StateMachine" unique_id=1541698467 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("9_hstm8")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://d1fu3dti38a1g"
+
+[node name="dive" type="Node" parent="StateMachine" unique_id=1674931908 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("10_mxtaf")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://bgxo0p6j83ivs"
+
+[node name="onWall" type="Node" parent="StateMachine" unique_id=817726660 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("11_s1lxv")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://cxemrh7qf78eq"
+
+[node name="crouching" type="Node" parent="StateMachine" unique_id=382235661 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("12_au1rs")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://mra0ufcc3st4"
+
+[node name="backFlipping" type="Node" parent="StateMachine" unique_id=1136553927 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("13_2rred")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://3r8x4xnng6gr"
+
+[node name="crouchMove" type="Node" parent="StateMachine" unique_id=642213773 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("14_6ogdw")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://qvjdbvrnmgsd"
+
+[node name="flying" type="Node" parent="StateMachine" unique_id=1486726053 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("15_glr5n")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://bkeidnialndd2"
+
+[node name="spinAttack" type="Node" parent="StateMachine" unique_id=1306966603 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("16_6d4un")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://db1t2apmdbuy1"
+
+[node name="isHit" type="Node" parent="StateMachine" unique_id=981667121 node_paths=PackedStringArray("rootVars")]
+script = ExtResource("16_me8x2")
+rootVars = NodePath("../..")
+metadata/_custom_type_script = "uid://82l55mhp87cd"
+
+[node name="playerEnd" type="Node" parent="StateMachine" unique_id=1462383796 node_paths=PackedStringArray("rootVars")]
+script = ExtResource("17_5cjdm")
+rootVars = NodePath("../..")
+metadata/_custom_type_script = "uid://cp8cadalfbsmx"
+
+[node name="levelChoosing" type="Node" parent="StateMachine" unique_id=1754122921 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("18_r6ncv")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://vepj4lliwcy6"
+
+[node name="levelEnter" type="Node" parent="StateMachine" unique_id=2115057918 node_paths=PackedStringArray("playerVars")]
+script = ExtResource("19_uwok7")
+playerVars = NodePath("../..")
+metadata/_custom_type_script = "uid://1mb34osvif1h"
+
+[node name="propeller" type="Node" parent="StateMachine" unique_id=504866605]
+script = ExtResource("20_r6ncv")
+metadata/_custom_type_script = "uid://ehwit5swnunb"
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=774826640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6191219)
+target_position = Vector3(0, 0, -1.25)
+
+[node name="floorDetection" type="RayCast3D" parent="." unique_id=35199634]
+target_position = Vector3(0, -4.9, 0)
+
+[node name="jumpTimer" type="Timer" parent="." unique_id=302942590]
+wait_time = 0.175
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1742681143]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=952201995]
+transform = Transform3D(2.575, 0, 0, 0, 2.575, 0, 0, 0, 2.575, 0, 0.24263796, 0)
+shape = SubResource("CylinderShape3D_g4v7s")
+disabled = true
+
+[node name="stepCast" type="ShapeCast3D" parent="." unique_id=1205024537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0644266, 0)
+shape = SubResource("CylinderShape3D_yf5fn")
+
+[node name="airBool" type="RayCast3D" parent="." unique_id=546272825]
+enabled = false
+target_position = Vector3(0, -2.1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2001105273]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=754985239]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="Area3D" to="StateMachine/spinAttack" method="_on_area_3d_body_entered"]

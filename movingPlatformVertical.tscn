@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b8uj7a6bmopx3"]
+
+[ext_resource type="Script" uid="uid://cqotrlic6kjes" path="res://platformVertical.gd" id="1_mwlgw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(17.092392, 1, 15.958282)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+size = Vector3(17.110016, 1, 15.809448)
+
+[node name="movingPlatformVertical" type="CharacterBody3D" unique_id=1043238903]
+script = ExtResource("1_mwlgw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=15476136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02016449, 0, 0.009963989)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=905578297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02027893, 0, -0.028381348)
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="deleteTimer" type="Timer" parent="." unique_id=813813576]
+one_shot = true
+
+[node name="distanceTimer" type="Timer" parent="." unique_id=1998487550]
+wait_time = 2.0
+one_shot = true
+
+[node name="startTimer" type="Timer" parent="." unique_id=805600773]
+one_shot = true
+
+[connection signal="timeout" from="deleteTimer" to="." method="_on_delete_timer_timeout"]
+[connection signal="timeout" from="distanceTimer" to="." method="_on_distance_timer_timeout"]
+[connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]

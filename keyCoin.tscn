@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b5srvcbc4xvuh"]
+
+[ext_resource type="Script" uid="uid://3t6ia8b7ho2k" path="res://key_coin.gd" id="1_1oecu"]
+[ext_resource type="PackedScene" uid="uid://cm500s2dnu25d" path="res://keyCoinGD.tscn" id="2_jlpql"]
+[ext_resource type="AudioStream" uid="uid://6vtixdvtn7c4" path="res://monkeyResources/CS_COIN.wav" id="3_jlpql"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1oecu"]
+height = 0.25079346
+radius = 0.9819336
+
+[sub_resource type="Animation" id="Animation_cduqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yc2xg"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.265732, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sggk7"]
+_data = {
+&"RESET": SubResource("Animation_cduqx"),
+&"spin": SubResource("Animation_yc2xg")
+}
+
+[node name="KeyCoin" type="Area3D" unique_id=2079233303]
+script = ExtResource("1_1oecu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=760696464]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.1872299e-10, 0.0027160645)
+shape = SubResource("CylinderShape3D_1oecu")
+
+[node name="keyCoin" parent="." unique_id=419599738 instance=ExtResource("2_jlpql")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=94810423]
+libraries/ = SubResource("AnimationLibrary_sggk7")
+autoplay = &"spin"
+
+[node name="CsCoin" type="AudioStreamPlayer" parent="." unique_id=1654278509]
+stream = ExtResource("3_jlpql")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
