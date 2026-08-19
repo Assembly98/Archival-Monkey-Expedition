@@ -856,4 +856,4 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 256.
 [node name="Camera3D" type="Camera3D" parent="." index="49" unique_id=824211493]
 
 [node name="deathArea" parent="." index="50" unique_id=1257733369 instance=ExtResource("22_27uib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.34375, 3.375, 7.123047)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 158.14844, 3.375, 42.72461)

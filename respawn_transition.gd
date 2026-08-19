@@ -4,6 +4,7 @@ extends ColorRect
 
 
 func transition():
+	$Label.text = "Lives: " + str(Global.lives)
 	anim.play("transition")
 	await anim.animation_finished
 	Global.respawning = true
