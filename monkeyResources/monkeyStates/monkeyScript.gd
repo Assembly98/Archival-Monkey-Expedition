@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+@export var respawnPoint : Node3D
+
+
 @onready var _camera_pivot = $Node3D
 @onready var camera_3d : Camera3D = %Camera3D
 @onready var anim = $monkey/AnimationPlayer
@@ -52,15 +55,13 @@ var cameraBool : bool = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		cameraBool = false
 	elif event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		cameraBool = true
 func _unhandled_input(event: InputEvent) -> void:
 	var is_camera_motion := (
 		event is InputEventMouseMotion
 	)
-	if is_camera_motion:
+	if is_camera_motion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
 
 
@@ -83,8 +84,18 @@ func  _physics_process(delta: float) -> void:
 	else:
 		$monkey/metarig/Skeleton3D/BoneAttachment3D/glider.visible = false
 
+	print("repawning", Global.respawning)
 	
-	_camera_pivot.position = position
+	if not Global.respawning2:
+		_camera_pivot.position = position
+		$monkey/eyecontrol.scale = Vector3.ONE
+	else:
+		_camera_pivot.position = _camera_pivot.position
+		anim.speed_scale = 1
+		velocity.y = -35
+		anim.play("fallingDown")
+		$monkey/eyecontrol.scale = 1.50 * Vector3.ONE
+		headShader.set_shader_parameter("mouthUVX", -0.51)
 	#floorRay.position = position
 	
 	var cameraInput = Input.get_vector("cL", "cR", "cF", "cB")
@@ -107,6 +118,11 @@ func  _physics_process(delta: float) -> void:
 
 	
 	move_and_snap(delta)
+
+func respawn():
+	Global.respawning2 = false
+	Global.respawning = false
+	position = respawnPoint.position
 
 func move_and_snap(delta : float) -> void:
 	step_cast.global_position.x = global_position.x + velocity.x * delta

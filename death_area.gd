@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Monkey":
-		RespawnTransition.transition()
+		Global.respawning2 = true
+		RespawnTransition.transition(body)

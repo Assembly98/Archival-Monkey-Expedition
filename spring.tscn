@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvrwqxs4b4k13"]
 
 [ext_resource type="Script" uid="uid://bxs2refsjessd" path="res://spring.gd" id="1_ka4py"]
+[ext_resource type="PackedScene" uid="uid://bav41pwo74nb3" path="res://springGD.tscn" id="2_boyml"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
 height = 1.0
@@ -22,6 +23,7 @@ gravity = 10.0
 script = ExtResource("1_ka4py")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1752073205]
+visible = false
 shape = SubResource("CylinderShape3D_g4v7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1579164709]
@@ -33,6 +35,9 @@ mesh = SubResource("CylinderMesh_g4v7s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2055664, 0)
 shape = SubResource("CylinderShape3D_yf5fn")
 disabled = true
+
+[node name="spring" parent="." unique_id=666364792 instance=ExtResource("2_boyml")]
+transform = Transform3D(1, 0, 0, 0, 0.525, 0, 0, 0, 1, 0, 0.45, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -27,3 +27,4 @@ var propellor : bool = false
 var health : int = 3
 var lives : int = 4
 var respawning : bool = false
+var respawning2 : bool = false

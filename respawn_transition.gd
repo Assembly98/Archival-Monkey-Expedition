@@ -3,7 +3,7 @@ extends ColorRect
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
-func transition():
+func transition(body):
 	$Label.text = "Lives: " + str(Global.lives)
 	anim.play("transition")
 	await anim.animation_finished
@@ -11,3 +11,6 @@ func transition():
 	Global.lives -= 1
 	$Label.text = "Lives: " + str(Global.lives)
 	anim.play_backwards("transition")
+	body.respawn()
+	await anim.animation_finished
+	

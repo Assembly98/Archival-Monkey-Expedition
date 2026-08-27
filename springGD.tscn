@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bav41pwo74nb3"]
+
+[ext_resource type="PackedScene" uid="uid://dven7h0cdiwiy" path="res://monkeyResources/spring.blend" id="1_kc327"]
+
+[node name="spring" unique_id=666364792 instance=ExtResource("1_kc327")]
