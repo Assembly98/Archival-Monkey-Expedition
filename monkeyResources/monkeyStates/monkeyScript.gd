@@ -22,6 +22,9 @@ var jumpVel := [20, 25, 35]
 var jumps = 0
 var storedVelocity : float
 
+var pause : bool = false
+@onready var pause_menu: CanvasLayer = $pauseMenu
+
 var randStrength : float = 10
 var shakeFade : float = 15
 var rng = RandomNumberGenerator.new()
@@ -67,6 +70,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	_camera_pivot.top_level = true
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
 
 func  _physics_process(delta: float) -> void:
 	if textTracker > 350:
@@ -117,6 +124,8 @@ func  _physics_process(delta: float) -> void:
 	#print("jumpTime: ", timer.time_left)
 
 	
+	
+	
 	move_and_snap(delta)
 
 func respawn():
@@ -155,5 +164,14 @@ func isHit():
 	
 func end():
 	Global.playerLvEnd = true
+
+func pauseMenu():
+	if pause:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
 	
+	pause = !pause
 	

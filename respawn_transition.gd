@@ -13,4 +13,3 @@ func transition(body):
 	anim.play_backwards("transition")
 	body.respawn()
 	await anim.animation_finished
-	

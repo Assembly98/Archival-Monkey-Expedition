@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dg5pirr8y5pom"]
+
+[ext_resource type="Script" uid="uid://cid6lddaawqcl" path="res://pauseMenu.gd" id="1_hfklj"]
+[ext_resource type="Script" uid="uid://bpnmcxipl01j1" path="res://button.gd" id="2_hts4r"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=232365195]
+script = ExtResource("1_hfklj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1344331173]
+anchors_preset = -1
+anchor_left = 0.36197916
+anchor_top = 0.28549382
+anchor_right = 0.6215278
+anchor_bottom = 0.69598764
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="resume" type="Button" parent="VBoxContainer" unique_id=424115838]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 25
+text = "Resume"
+script = ExtResource("2_hts4r")
+
+[node name="return" type="Button" parent="VBoxContainer" unique_id=690301417]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 25
+text = "Return to hub world"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=1976051886]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

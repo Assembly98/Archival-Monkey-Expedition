@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://vepj4lliwcy6" path="res://monkeyResources/monkeyStates/levelChoosing.gd" id="18_r6ncv"]
 [ext_resource type="Script" uid="uid://1mb34osvif1h" path="res://monkeyResources/monkeyStates/levelEnter.gd" id="19_uwok7"]
 [ext_resource type="Script" uid="uid://ehwit5swnunb" path="res://monkeyResources/monkeyStates/propeller.gd" id="20_r6ncv"]
+[ext_resource type="PackedScene" uid="uid://dg5pirr8y5pom" path="res://pauseMenu.tscn" id="21_5cjdm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n3274"]
 
@@ -164,10 +165,6 @@ shape = SubResource("CylinderShape3D_yf5fn")
 enabled = false
 target_position = Vector3(0, -2.1, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2001105273]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=754985239]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="pauseMenu" parent="." unique_id=232365195 instance=ExtResource("21_5cjdm")]
 
 [connection signal="body_entered" from="Area3D" to="StateMachine/spinAttack" method="_on_area_3d_body_entered"]
