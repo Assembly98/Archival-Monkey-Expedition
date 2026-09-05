@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c1m1bvgsl75y3"]
+
+[ext_resource type="Script" uid="uid://cbtngqlpcjow8" path="res://player_hud.gd" id="1_tvw2b"]
+
+[node name="playerHUD" type="CanvasLayer" unique_id=1473353262]
+script = ExtResource("1_tvw2b")
+
+[node name="Label" type="Label" parent="." unique_id=529060533]
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 133.0
+offset_bottom = 61.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 75
+text = "Health: "
+
+[node name="letters" type="Label" parent="." unique_id=1617916867]
+offset_left = 1456.0
+offset_top = 3.0
+offset_right = 1589.0
+offset_bottom = 106.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 75
+text = "Aa: "

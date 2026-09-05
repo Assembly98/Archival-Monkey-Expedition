@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://7k4c5hqv37m1"]
+
+[ext_resource type="Script" uid="uid://cxke4otljxb57" path="res://start_screen.gd" id="1_s4vtk"]
+
+[sub_resource type="Animation" id="Animation_s4vtk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(55, 132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(391.5, 576)]
+}
+
+[sub_resource type="Animation" id="Animation_d4clo"]
+resource_name = "transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(55, 132), Vector2(55, 24.00003), Vector2(55, 679)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(391.5, 576), Vector2(391.5, 468.00003), Vector2(391.5, 1123)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqr7l"]
+_data = {
+&"RESET": SubResource("Animation_s4vtk"),
+&"transition": SubResource("Animation_d4clo")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=3010637]
+script = ExtResource("1_s4vtk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=456314539]
+libraries/ = SubResource("AnimationLibrary_mqr7l")
+
+[node name="Label" type="Label" parent="." unique_id=1218053991]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_top = -72.0
+offset_right = 184.5
+offset_bottom = -32.99939
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 28
+text = "Press  Any  Button  to  Start"
+
+[node name="title" type="Label" parent="." unique_id=552071374]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -521.0
+offset_top = 132.0
+offset_right = 521.0
+offset_bottom = 235.00021
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 75
+text = "Archival  Monkey  Expedition"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=706314789]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -966.0
+offset_bottom = -966.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

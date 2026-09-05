@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://1mb34osvif1h" path="res://monkeyResources/monkeyStates/levelEnter.gd" id="19_uwok7"]
 [ext_resource type="Script" uid="uid://ehwit5swnunb" path="res://monkeyResources/monkeyStates/propeller.gd" id="20_r6ncv"]
 [ext_resource type="PackedScene" uid="uid://dg5pirr8y5pom" path="res://pauseMenu.tscn" id="21_5cjdm"]
+[ext_resource type="PackedScene" uid="uid://c1m1bvgsl75y3" path="res://player_hud.tscn" id="22_r6ncv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n3274"]
 
@@ -166,5 +167,7 @@ enabled = false
 target_position = Vector3(0, -2.1, 0)
 
 [node name="pauseMenu" parent="." unique_id=232365195 instance=ExtResource("21_5cjdm")]
+
+[node name="playerHUD" parent="." unique_id=1473353262 instance=ExtResource("22_r6ncv")]
 
 [connection signal="body_entered" from="Area3D" to="StateMachine/spinAttack" method="_on_area_3d_body_entered"]
