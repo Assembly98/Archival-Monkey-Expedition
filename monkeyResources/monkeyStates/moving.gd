@@ -8,6 +8,7 @@ var skidding : bool = false
 var stairsBool : bool = false
 
 func enter() -> void:
+	playerVars.hasJumped = false
 	playerVars.timer.start()
 	playerVars.headShader.set_shader_parameter("mouthUVX", playerVars.eyeTextPos[0])
 
