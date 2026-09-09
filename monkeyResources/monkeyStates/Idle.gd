@@ -6,6 +6,7 @@ class_name Idle
 
 
 func enter() -> void:
+	playerVars.hasJumped = false
 	$"../../jumpTimer".start()
 	playerVars.storedVelocity = 0
 	playerVars.headShader.set_shader_parameter("mouthUVX", playerVars.mouthTextPos[0])
@@ -42,6 +43,7 @@ func physicsUpdate(delta : float) -> void:
 	playerVars.velocity = playerVars.velocity.move_toward(Vector3.ZERO, 15 * delta)
 		
 	if Input.get_vector("Left", "Right", "Forward", "Backwards"):
+		Global.landing = false
 		transition.emit(self, "moving")
 	
 	if not playerVars.is_on_floor():
@@ -55,6 +57,7 @@ func physicsUpdate(delta : float) -> void:
 		playerVars.jumps = 0
 	
 	if Input.is_action_just_pressed("jump"):
+		Global.landing = false
 		playerVars.jumps += 1
 		playerVars.velocity.y += playerVars.jumpVel[playerVars.jumps - 1]
 		if playerVars.velocity.length() > 10:

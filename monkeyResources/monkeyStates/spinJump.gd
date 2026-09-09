@@ -45,7 +45,8 @@ func physicsUpdate(delta : float) -> void:
 		transition.emit(self, "Idle")
 	elif playerVars.is_on_floor() and playerVars.velocity != Vector3.ZERO:
 		transition.emit(self, "moving")
-	if playerVars.isOnWall():
+	if playerVars.isOnWall() and playerVars.hasJumped == false:
+		playerVars.hasJumped = true
 		transition.emit(self, "onWall")
 		
 	if Input.is_action_just_pressed("action2"):

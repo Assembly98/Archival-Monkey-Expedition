@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7ssde4q1yaf6"]
+
+[ext_resource type="PackedScene" uid="uid://ejawui843dp7" path="res://Ribbon.blend" id="1_jic7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxyth"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Ribbon" unique_id=1679560709 instance=ExtResource("1_jic7m")]
+
+[node name="Light" parent="." index="0" unique_id=531750659]
+visible = false
+
+[node name="Camera" parent="." index="1" unique_id=12611184]
+visible = false
+
+[node name="Plane" parent="." index="2" unique_id=1165369309]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.019758344, -5.5309725, 2.7700136)
+surface_material_override/0 = SubResource("StandardMaterial3D_vxyth")

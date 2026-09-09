@@ -22,6 +22,8 @@ var jumpVel := [20, 25, 35]
 var jumps = 0
 var storedVelocity : float
 
+var hasJumped : bool = false
+
 var pause : bool = false
 @onready var pause_menu: CanvasLayer = $pauseMenu
 
@@ -104,6 +106,7 @@ func  _physics_process(delta: float) -> void:
 		$monkey/eyecontrol.scale = 1.50 * Vector3.ONE
 		headShader.set_shader_parameter("mouthUVX", -0.51)
 	#floorRay.position = position
+	
 	
 	var cameraInput = Input.get_vector("cL", "cR", "cF", "cB")
 	

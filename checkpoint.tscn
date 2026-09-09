@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://dspcr7q4bux6x"]
 
+[ext_resource type="PackedScene" uid="uid://b2vse2hlxo06j" path="res://bookUsableGD.tscn" id="1_r6hke"]
+[ext_resource type="Script" uid="uid://cgth2y17r27pr" path="res://checkpoint.gd" id="1_tnhlw"]
+[ext_resource type="PackedScene" uid="uid://b7ssde4q1yaf6" path="res://ribbonGD.tscn" id="2_tnhlw"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1, 6.501465, 1)
 
 [node name="checkpoint" type="Node3D" unique_id=1038151735]
+script = ExtResource("1_tnhlw")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=24611956]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=313659983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3134809, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="bookUsable" parent="." unique_id=1730270858 instance=ExtResource("1_r6hke")]
+transform = Transform3D(5.4639235e-09, -4.7767137e-16, 0.125, -1.0927847e-08, -0.125, 0, 0.125, -1.0927847e-08, -5.4639235e-09, -0.8957434, 4.8928366, 0)
+
+[node name="Ribbon" parent="." unique_id=1679560709 instance=ExtResource("2_tnhlw")]
+transform = Transform3D(0.58, 0, 0, 0, 0.94, 0, 0, 0, 1, -0.062582016, 6.5811396, -2.7435222)
+
+[node name="Ribbon2" parent="." unique_id=427837577 instance=ExtResource("2_tnhlw")]
+transform = Transform3D(-0.58, 0, -8.742278e-08, 0, 0.94, 0, 5.070521e-08, 0, -1, -0.062582016, 6.5811396, 2.7736897)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

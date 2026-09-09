@@ -5,6 +5,7 @@ class_name levelChoosing
 @export var playerVars : CharacterBody3D
 var animPlaying = false
 var textAnim = false
+var inputCheck : bool = false
 
 func enter() -> void:
 	playerVars.velocity = Vector3.ZERO
@@ -28,10 +29,11 @@ func update(delta : float) -> void:
 	
 	print(anim.current_animation)
 	
-	if Input.is_action_just_pressed("action2") and animPlaying == false and not textAnim == true:
+	if Input.is_action_just_pressed("action2") and animPlaying == false and not textAnim == true :
 		anim.play_backwards("topPeeking")
 		animPlaying = true
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and inputCheck == false:
+		inputCheck = true
 		textAnim = true
 		Global.jumpIn = true
 		anim.speed_scale = 1.35
