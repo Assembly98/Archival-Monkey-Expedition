@@ -29,20 +29,11 @@ func physicsUpdate(delta : float) -> void:
 	
 	playerVars.velocity = playerVars.velocity.move_toward(direction * 10, 25 * delta)
 	
+	print("pos: ", Global.launchZonePos)
+	
 	if not Global.inLaunchZone and not Global.landing and not Global.propellor:
 		playerVars.velocity.y = y_velocity + ((-50)) * delta
 		#print("norm")
-	elif  Global.propellor:
-		print(y_velocity)
-		if y_velocity >= -1:
-			playerVars.velocity.y = y_velocity + ((-10)) * delta
-		else:
-			playerVars.velocity.y = -1
-		
-		if playerVars.velocity.length() < 12:
-			anim.play("gliding")
-		else:
-			anim.play("glidingFast")
 	elif Global.landing:
 		playerVars.velocity.y = y_velocity + (-playerVars.storedVelocity) * delta
 		anim.play("backflipping")

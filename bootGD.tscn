@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dwljlhu1l6e55"]
+
+[ext_resource type="PackedScene" uid="uid://csc4kee1ns1cy" path="res://boot.blend" id="1_8h0jr"]
+[ext_resource type="Shader" uid="uid://bwyh7lnyehx8p" path="res://monkeyShader.tres" id="2_v4lpv"]
+[ext_resource type="Texture2D" uid="uid://fr5afsctmt43" path="res://floorTextureLibrary.png" id="3_opnbx"]
+
+[sub_resource type="Gradient" id="Gradient_gbpie"]
+offsets = PackedFloat32Array(0.22, 0.23)
+colors = PackedColorArray(0.096204735, 0.09620475, 0.096204735, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_crxlq"]
+gradient = SubResource("Gradient_gbpie")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkr6c"]
+render_priority = 0
+shader = ExtResource("2_v4lpv")
+shader_parameter/albedo_texture = ExtResource("3_opnbx")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_crxlq")
+
+[node name="boot" unique_id=1360408280 instance=ExtResource("1_8h0jr")]
+
+[node name="Cube_001" parent="." index="0" unique_id=1356874081]
+surface_material_override/0 = SubResource("ShaderMaterial_mkr6c")
+
+[node name="Cube_002" parent="." index="1" unique_id=1394602648]
+surface_material_override/0 = SubResource("ShaderMaterial_mkr6c")

@@ -21,6 +21,7 @@ extends CharacterBody3D
 var jumpVel := [20, 25, 35]
 var jumps = 0
 var storedVelocity : float
+var speed : int = 10
 
 var hasJumped : bool = false
 
@@ -33,7 +34,7 @@ var rng = RandomNumberGenerator.new()
 var shakeStrength : float = 0.0
 var grounded : bool = false
 
-var speed : float = 150
+
 const jumpForce : float = 25.0
 
 var lastMoveDir := Vector3.BACK
@@ -74,6 +75,11 @@ func _ready() -> void:
 	_camera_pivot.top_level = true
 
 func _process(delta: float) -> void:
+	if shakeStrength > 0:
+		shakeStrength = lerpf(shakeStrength, 0, shakeFade * delta)
+		#%Camera3D.h_offset = playerVars.randOffset().x
+		%Camera3D.v_offset = randOffset().y
+	
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
 
@@ -88,10 +94,6 @@ func  _physics_process(delta: float) -> void:
 	textTracker = wrapi(textTracker, 0, 375)
 	
 	
-	if Global.propellor == true:
-		$monkey/metarig/Skeleton3D/BoneAttachment3D/glider.visible = true
-	else:
-		$monkey/metarig/Skeleton3D/BoneAttachment3D/glider.visible = false
 
 	print("repawning", Global.respawning)
 	

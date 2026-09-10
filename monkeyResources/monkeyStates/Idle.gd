@@ -22,10 +22,7 @@ func enter() -> void:
 		Global.landing = false
 		
 func update(delta : float) -> void:
-	if playerVars.shakeStrength > 0:
-		playerVars.shakeStrength = lerpf(playerVars.shakeStrength, 0, playerVars.shakeFade * delta)
-		#%Camera3D.h_offset = playerVars.randOffset().x
-		%Camera3D.v_offset = playerVars.randOffset().y
+	pass
 	
 func physicsUpdate(delta : float) -> void:
 		

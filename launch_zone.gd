@@ -9,9 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.inLaunchZone:
-		Global.launchZonePos = position
-		Global.launchZoneRot = rotation
 		
 	if Global.inLaunchZone == true:
 		if Input.is_action_just_pressed("action"):
@@ -27,6 +24,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Monkey":
 		Global.inLaunchZone = true
+		Global.launchZonePos = position
+		Global.launchZoneRot = rotation
 
 
 func _on_body_exited(body: Node3D) -> void:

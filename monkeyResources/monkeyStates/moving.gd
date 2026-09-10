@@ -33,7 +33,7 @@ func physicsUpdate(delta : float) -> void:
 	
 	
 	if direction and not direction.dot(playerVars.velocity) < 0:
-		playerVars.velocity = playerVars.velocity.lerp((direction * 10), 25 * delta)
+		playerVars.velocity = playerVars.velocity.lerp((direction * playerVars.speed), 25 * delta)
 	else:
 		playerVars.velocity = playerVars.velocity.move_toward(Vector3.ZERO, 35 * delta)
 	
